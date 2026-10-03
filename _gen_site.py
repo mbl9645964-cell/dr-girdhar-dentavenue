@@ -172,9 +172,9 @@ def build_index():
 <div><dt>Location</dt><dd>{CITY}</dd></div>
 </dl>
 </div>
-<div class="hero__side" data-reveal>
-{I_TOOTH}
-<span>Two specialists, one practice — endodontics and orthodontics under the same roof.</span>
+<div class="hero__side has-img" data-reveal>
+<img src="{IMG}room-1.jpg" alt="Treatment room at Dr. Girdhar's DentAvenue">
+<span class="hero__side__tag">The clinic &middot; {CITY}</span>
 </div>
 </div>
 </div>
@@ -195,7 +195,7 @@ def build_index():
 <p class="muted" style="margin-top:1rem">Every case starts with a careful diagnosis and an honest conversation about what it actually needs — explained in plain language, before any treatment begins.</p>
 <a class="text-link" style="margin-top:1.6rem" href="doctors.html">Meet the doctors{I_ARROW}</a>
 </div>
-<div class="split__media" data-reveal>{PH_FRAME(I_PHOTO, "Add clinic photo")}</div>
+<div class="split__media" data-reveal><figure class="frame frame--tall frame--duo"><img src="{IMG}room-2.jpg" alt="Treatment room"></figure></div>
 </div></section>'''
 
     treatments_teaser = f'''<section class="section bg-band"><div class="wrap">
@@ -253,7 +253,7 @@ def build_about():
 </div></section>'''
 
     story = f'''<section class="section bg-card"><div class="wrap split split--rev">
-<div class="split__media" data-reveal>{PH_FRAME(I_PHOTO, "Add clinic photo")}</div>
+<div class="split__media" data-reveal><figure class="frame frame--tall frame--duo"><img src="{IMG}room-3.jpg" alt="Treatment room"></figure></div>
 <div data-reveal>
 <span class="eyebrow">Why two specialists</span>
 <h2 class="display-2">Depth, not just convenience.</h2>
@@ -423,9 +423,9 @@ def build_clinic():
 
     gallery = f'''<section class="section bg-card"><div class="wrap">
 <div class="gallery" data-reveal>
-<div class="ph-frame g1">{I_PHOTO}<span>Add reception photo</span></div>
-<div class="ph-frame g2">{I_PHOTO}<span>Add treatment room photo</span></div>
-<div class="ph-frame g3">{I_PHOTO}<span>Add consultation room photo</span></div>
+<figure class="frame frame--duo g1"><img src="{IMG}room-1.jpg" alt="Treatment room"><span class="frame__tag">Treatment room</span></figure>
+<figure class="frame frame--duo g2"><img src="{IMG}room-2.jpg" alt="Treatment room"><span class="frame__tag">Treatment room</span></figure>
+<figure class="frame frame--duo g3"><img src="{IMG}room-3.jpg" alt="Treatment room"><span class="frame__tag">Treatment room</span></figure>
 </div>
 </div></section>'''
 
