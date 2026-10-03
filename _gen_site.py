@@ -140,9 +140,9 @@ def section_head(kicker, title, intro="", center=False, light=False):
     c = " is-center" if center else ""
     ec = "eyebrow--center" if center else ""
     el = "eyebrow--light" if light else ""
-    out = f'<div class="section-head{c}" data-reveal><span class="eyebrow {ec} {el}">{kicker}</span><h2 class="display-2">{title}</h2>'
+    out = f'<div class="section-head{c}" data-reveal><span class="eyebrow {ec} {el}">{kicker}</span><h2 class="display-2">{title}</h2><span class="section-head__rule"></span>'
     if intro:
-        out += f'<p class="lead" style="margin-top:1rem">{intro}</p>'
+        out += f'<p class="lead" style="margin-top:1.2rem">{intro}</p>'
     return out + "</div>"
 
 HERO_PATTERN = '''<svg class="hero__pattern" viewBox="0 0 1200 700" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -210,14 +210,12 @@ def build_index():
 </div></section>'''
 
     doctors_teaser = f'''<section class="section bg-ink"><div class="wrap">
-<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(2rem,4vw,3rem)" data-reveal>
-<div><span class="eyebrow eyebrow--light">The doctors</span><h2 class="display-2" style="color:var(--cream)">Specialist care, academic rigour.</h2></div>
-<a class="text-link text-link--light" href="doctors.html">Meet the doctors{I_ARROW}</a>
+{section_head("The doctors", "Specialist care, academic rigour.", "", center=True, light=True)}
+<div class="doc-circles stagger" data-reveal>
+<div class="doc-circle"><div class="doc-circle__ph">{I_MICROSCOPE}</div><h3>Dr. Divyam Girdhar</h3><p class="doc-circle__role">Endodontics &amp; Conservative Dentistry</p><span class="doc-circle__rule"></span><p>BDS, MDS — Root Canal Specialist. Ex. Senior Resident, PGIDS Rohtak.</p></div>
+<div class="doc-circle"><div class="doc-circle__ph">{I_BRACES}</div><h3>Dr. Nikita Mohelay Girdhar</h3><p class="doc-circle__role">Orthodontics &amp; Dentofacial Orthopaedics</p><span class="doc-circle__rule"></span><p>BDS, MDS, PhD (in progress) — Aligners &amp; myofunctional therapy specialist.</p></div>
 </div>
-<div class="feat-grid stagger" data-reveal>
-<div class="feat"><h3>Dr. Divyam Girdhar</h3><p style="color:var(--copper);font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin:.3rem 0 .6rem">Endodontics &amp; Conservative Dentistry</p><p>BDS, MDS — Root Canal Specialist. Ex. Senior Resident, PGI Rohtak.</p></div>
-<div class="feat"><h3>Dr. Nikita Mohelay Girdhar</h3><p style="color:var(--copper);font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin:.3rem 0 .6rem">Orthodontics &amp; Dentofacial Orthopaedics</p><p>BDS, MDS, PhD (in progress) — Aligners &amp; myofunctional therapy specialist.</p></div>
-</div>
+<p class="center" style="margin-top:clamp(2rem,4vw,2.8rem)" data-reveal><a class="text-link text-link--light" href="doctors.html">Meet the doctors{I_ARROW}</a></p>
 </div></section>'''
 
     process = f'''<section class="section bg-card"><div class="wrap">
@@ -371,10 +369,25 @@ def build_treatments():
 <p class="lead" style="margin-top:1.4rem;max-width:60ch">Root canal and orthodontic care are our specialist focus — alongside the restorative and cosmetic treatments every smile occasionally needs.</p>
 </div></section>'''
 
-    items = [
-        ("root-canal", I_TOOTH, "Root Canal Therapy", "Microscope-assisted root canal treatment, led by an endodontic specialist — including retreatment of previously treated teeth and management of complex cases."),
+    featured = [
+        ("root-canal", I_MICROSCOPE, "Root Canal Therapy", "Microscope-assisted root canal treatment, led by an endodontic specialist — including retreatment of previously treated teeth and management of complex cases."),
         ("aligners", I_BRACES, "Aligners &amp; Orthodontics", "Comprehensive orthodontic treatment including clear aligners, growth modification, complex bite correction and temporary anchorage devices (TADs)."),
         ("implants", I_TOOTH, "Dental Implants", "Long-lasting replacements for missing teeth, carefully planned to preserve surrounding bone and teeth."),
+    ]
+    tl_items = []
+    for i, (anchor, icon, title, desc) in enumerate(featured):
+        rev = " tl-item--rev" if i % 2 else ""
+        tl_items.append(f'''<div class="tl-item{rev}" id="{anchor}" data-reveal>
+<div class="tl-media">{PH_FRAME(icon, "Add treatment photo")}</div>
+<span class="tl-num">{i+1}</span>
+<div class="tl-body"><h3>{title}</h3><span class="section-head__rule"></span><p>{desc}</p><a class="text-link text-link--light" href="{WA_BOOK}" target="_blank" rel="noopener">Enquire about this{I_ARROW}</a></div>
+</div>''')
+    timeline = f'''<section class="section bg-ink"><div class="wrap">
+{section_head("Specialist focus", "Our two core disciplines, in depth.", "", light=True)}
+<div class="timeline">{"".join(tl_items)}</div>
+</div></section>'''
+
+    items = [
         ("cosmetic", I_TOOTH, "Cosmetic Dentistry", "Veneers, professional whitening and smile design, planned around your natural proportions for results that look like you."),
         ("restorative", I_TOOTH, "Crowns, Bridges &amp; Restorative Care", "Tooth-coloured restorations for damaged or worn teeth, including full-mouth restorative planning."),
         ("preventive", I_TOOTH, "Preventive &amp; Family Dentistry", "Check-ups, cleaning and fluoride care for every member of the family, from first visit onward."),
@@ -383,14 +396,17 @@ def build_treatments():
     lis = []
     for anchor, icon, title, desc in items:
         lis.append(f'<li id="{anchor}"><a href="{WA_BOOK}" target="_blank" rel="noopener"><span class="tlist__ic">{icon}</span><span class="tlist__body"><h3>{title}</h3><p>{desc}</p></span><span class="tlist__arrow">{I_ARROW}</span></a></li>')
-    listing = f'<section class="section bg-card"><div class="wrap"><ul class="tlist" data-reveal>{"".join(lis)}</ul></div></section>'
+    listing = f'''<section class="section bg-card"><div class="wrap">
+{section_head("General care", "Everyday dentistry, done well.")}
+<ul class="tlist" data-reveal>{"".join(lis)}</ul>
+</div></section>'''
 
     cta = f'''<section class="ctaband"><div class="wrap ctaband__row" data-reveal>
 <div><span class="eyebrow eyebrow--light">Not sure what you need?</span><h2>Tell us your concern — we&rsquo;ll recommend a plan.</h2></div>
 <div class="ctaband__btns"><a class="btn btn--cream" href="{WA_BOOK}" target="_blank" rel="noopener">WhatsApp Us</a></div>
 </div></section>'''
 
-    body = hero + listing + cta
+    body = hero + timeline + listing + cta
     return page("Treatments", "Root canal therapy, orthodontics and general dentistry at Dr. Girdhar's DentAvenue, Faridabad.", body, active="treatments.html")
 
 open(os.path.join(BASE, "treatments.html"), "w", encoding="utf-8").write(build_treatments())

@@ -76,6 +76,9 @@ p:last-child{ margin-bottom:0; }
 .measure{ max-width:56ch; }
 
 .section-head{ max-width:640px; margin-bottom:clamp(2.2rem,5vw,3.4rem); }
+.section-head__rule{ display:block; width:52px; height:2px; background:var(--copper); margin-top:1rem; }
+.section-head.is-center .section-head__rule{ margin-inline:auto; }
+.bg-ink .section-head__rule{ background:var(--copper); }
 .section-head.is-center{ margin-inline:auto; text-align:center; }
 
 /* ----------------------------- Buttons ----------------------------- */
@@ -115,8 +118,8 @@ p:last-child{ margin-bottom:0; }
 .brand__mark{ width:44px; height:44px; border-radius:50%; border:1.5px solid var(--teal); display:inline-flex; align-items:center; justify-content:center; color:var(--teal); flex:none; }
 .brand__mark svg{ width:22px; height:22px; }
 .brand__word{ display:flex; flex-direction:column; line-height:1; gap:3px; }
-.brand__name{ font-family:var(--f-serif); font-weight:700; font-size:1.22rem; color:var(--ink); letter-spacing:.005em; }
-.brand__tag{ font-family:var(--f-sans); font-size:.58rem; letter-spacing:.2em; text-transform:uppercase; color:var(--copper-d); font-weight:700; }
+.brand__name{ font-family:var(--f-sans); font-weight:800; font-size:1.02rem; color:var(--ink); letter-spacing:.06em; text-transform:uppercase; }
+.brand__tag{ font-family:var(--f-sans); font-size:.56rem; letter-spacing:.24em; text-transform:uppercase; color:var(--copper-d); font-weight:700; margin-top:.15rem; }
 .nav__menu{ list-style:none; display:flex; gap:1.9rem; margin:0 0 0 auto; padding:0; }
 .nav__menu a{ font-size:.9rem; font-weight:600; color:var(--ink-70); position:relative; padding:.3rem 0; }
 .nav__menu a::after{ content:""; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--teal); transition:width .3s var(--ease); }
@@ -325,3 +328,38 @@ p:last-child{ margin-bottom:0; }
 .rule{ height:1px; background:var(--line); border:0; margin:0; }
 .center{ text-align:center; }
 .mx-auto{ margin-inline:auto; }
+
+/* ------------------------------ Timeline treatments (numbered, alternating) ------------------------------ */
+.timeline{ position:relative; }
+.timeline::before{ content:""; position:absolute; left:50%; top:0; bottom:0; width:1px; background:var(--line-dark); transform:translateX(-.5px); }
+.tl-item{ display:grid; grid-template-columns:1fr auto 1fr; gap:clamp(1.6rem,3vw,3rem); align-items:center; padding-block:clamp(2.2rem,4vw,3.4rem); }
+.tl-item--rev .tl-media{ order:3; }
+.tl-item--rev .tl-body{ order:1; text-align:right; }
+.tl-item--rev .tl-body ul{ text-align:left; }
+.tl-num{ position:relative; z-index:1; width:44px; height:44px; border-radius:50%; background:var(--copper); color:#111; font-family:var(--f-serif); font-weight:700; font-size:1.05rem; display:flex; align-items:center; justify-content:center; flex:none; }
+.tl-media .ph-frame{ aspect-ratio:4/3; border-style:dashed; }
+.tl-body h3{ font-family:var(--f-serif); font-weight:700; font-size:clamp(1.3rem,2.4vw,1.75rem); color:var(--cream); margin-bottom:.4rem; }
+.tl-body .section-head__rule{ margin-top:0; margin-bottom:.9rem; }
+.tl-item--rev .tl-body .section-head__rule{ margin-left:auto; }
+.tl-body p{ color:var(--cream-70); font-size:.95rem; max-width:48ch; }
+.tl-item--rev .tl-body p{ margin-left:auto; }
+.tl-body .text-link{ margin-top:.8rem; }
+@media (max-width:860px){
+  .timeline::before{ display:none; }
+  .tl-item, .tl-item--rev{ grid-template-columns:1fr; text-align:left; }
+  .tl-item--rev .tl-media, .tl-item--rev .tl-body{ order:0; }
+  .tl-item--rev .tl-body{ text-align:left; }
+  .tl-item--rev .tl-body p, .tl-item--rev .tl-body .section-head__rule{ margin-left:0; }
+  .tl-num{ margin-bottom:.4rem; }
+}
+
+/* ------------------------------ Circular doctor portraits (homepage teaser) ------------------------------ */
+.doc-circles{ display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(2rem,4vw,3.5rem); }
+.doc-circle{ text-align:center; }
+.doc-circle__ph{ width:150px; height:150px; border-radius:50%; margin-inline:auto; border:3px solid var(--cream); background:linear-gradient(170deg,rgba(255,255,255,.1),rgba(255,255,255,.02)); display:flex; align-items:center; justify-content:center; color:var(--copper); margin-bottom:1.3rem; }
+.doc-circle__ph svg{ width:40px; height:40px; }
+.doc-circle h3{ font-family:var(--f-serif); font-weight:700; font-size:1.3rem; color:var(--cream); }
+.doc-circle__role{ font-size:.74rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--copper); margin:.5rem 0 .9rem; }
+.doc-circle__rule{ width:30px; height:1px; background:var(--copper); margin:0 auto .9rem; }
+.doc-circle p{ color:var(--cream-70); font-size:.9rem; max-width:34ch; margin-inline:auto; }
+@media (max-width:700px){ .doc-circles{ grid-template-columns:1fr; } }
