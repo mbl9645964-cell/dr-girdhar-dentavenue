@@ -218,6 +218,25 @@ def build_index():
 <p class="center" style="margin-top:clamp(2rem,4vw,2.8rem)" data-reveal><a class="text-link text-link--light" href="doctors.html">Meet the doctors{I_ARROW}</a></p>
 </div></section>'''
 
+    philosophy = f'''<section class="section bg-card"><div class="wrap split">
+<div data-reveal>
+<div class="quote"><blockquote>Successful endodontic treatment is not simply about treating a tooth — it is about preserving natural tooth structure, restoring function, and providing long-term oral health through careful diagnosis and precise treatment.</blockquote><cite>Dr. Divyam Girdhar, Endodontics</cite></div>
+</div>
+<div data-reveal>
+<div class="quote"><blockquote>No two smiles are the same, and no two treatment plans should be either. Every treatment begins with a detailed assessment of the patient's teeth, jaws and individual concerns.</blockquote><cite>Dr. Nikita Mohelay Girdhar, Orthodontics</cite></div>
+</div>
+</div></section>'''
+
+    technology = f'''<section class="section bg-ink"><div class="wrap">
+{section_head("Technique &amp; technology", "Precision tools, used with judgement.", "Technology is used where it genuinely improves the outcome — never for its own sake.", light=True)}
+<div class="feat-grid stagger" data-reveal>
+<div class="feat"><h3>Dental operating microscope</h3><p>Used for microscopic endodontics, retreatment and endodontic microsurgery — precision beyond what the naked eye allows.</p></div>
+<div class="feat"><h3>Digital imaging</h3><p>Used for diagnosis and treatment planning, read directly by the specialist treating you.</p></div>
+<div class="feat"><h3>Temporary anchorage devices</h3><p>Used in orthodontics for complex bite correction and accelerated treatment, where appropriate.</p></div>
+<div class="feat"><h3>Growth &amp; dentofacial planning</h3><p>Used for younger patients and cleft cases, where treatment must account for ongoing facial growth.</p></div>
+</div>
+</div></section>'''
+
     process = f'''<section class="section bg-card"><div class="wrap">
 {section_head("How it works", "A calm path from consultation to result.")}
 <div class="steps stagger" data-reveal>
@@ -255,7 +274,7 @@ def build_index():
 <div class="ctaband__btns"><a class="btn btn--cream" href="{WA_BOOK}" target="_blank" rel="noopener">Book an Appointment</a><a class="text-link text-link--light" href="{WA_CHAT}" target="_blank" rel="noopener">Chat with us{I_ARROW}</a></div>
 </div></section>'''
 
-    body = hero + factstrip + intro + treatments_teaser + audience + doctors_teaser + process + faq + cta
+    body = hero + factstrip + intro + treatments_teaser + audience + doctors_teaser + philosophy + technology + process + faq + cta
     return page(
         "Specialist Dental Clinic in Faridabad",
         "Dr. Girdhar's DentAvenue — a specialist-led dental practice in Faridabad, combining endodontics and orthodontics.",
