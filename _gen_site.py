@@ -228,12 +228,34 @@ def build_index():
 </div>
 </div></section>'''
 
+    audience = f'''<section class="section bg-band"><div class="wrap">
+{section_head("Who we see", "Specialist care for specific concerns.", "If any of these sound familiar, a consultation is the right next step.")}
+<div class="feat-grid stagger" data-reveal>
+<div class="feat"><h3>Tooth pain or infection</h3><p>Needing a root canal assessment, including teeth that have been treated before.</p></div>
+<div class="feat"><h3>Crowding or bite issues</h3><p>Considering aligners or braces, for a teenager or as an adult.</p></div>
+<div class="feat"><h3>A complex or unusual case</h3><p>Referred by another dentist for a second opinion or specialist management.</p></div>
+<div class="feat"><h3>A cleft lip &amp; palate case</h3><p>Requiring coordinated orthodontic planning across stages of growth.</p></div>
+</div>
+</div></section>'''
+
+    faq_items = [
+        ("Do I need a referral to see a specialist here?", "No. You can book directly with either doctor — a referral from another dentist is welcome but not required."),
+        ("How many visits does root canal treatment usually need?", "Many straightforward cases are completed in a single sitting; more complex or retreatment cases may need two visits. This is confirmed after examination, not assumed in advance."),
+        ("I'm an adult — can I still get aligners or braces?", "Yes. Orthodontic treatment works at any age; the plan and timeline are simply adjusted to your bite, bone and goals."),
+        ("What should I bring to my first visit?", "Any previous X-rays, treatment records or referral notes you have. If you don't have any, that's fine — we'll assess from scratch."),
+    ]
+    faq_html = "".join(f'<div style="border-top:1px solid var(--line);padding:clamp(1.4rem,3vw,1.9rem) 0"><h3 class="display-3" style="font-size:1.1rem">{q}</h3><p class="muted" style="margin-top:.6rem">{a}</p></div>' for q, a in faq_items)
+    faq = f'''<section class="section bg-card"><div class="wrap">
+{section_head("Questions", "A few things patients often ask.", "", center=True)}
+<div style="max-width:74ch;margin-inline:auto" data-reveal>{faq_html}<div class="rule"></div></div>
+</div></section>'''
+
     cta = f'''<section class="ctaband"><div class="wrap ctaband__row" data-reveal>
 <div><span class="eyebrow eyebrow--light">Book your visit</span><h2>Ready when you are.</h2><p>Message us on WhatsApp or call the clinic — new patients are always welcome.</p></div>
 <div class="ctaband__btns"><a class="btn btn--cream" href="{WA_BOOK}" target="_blank" rel="noopener">Book an Appointment</a><a class="text-link text-link--light" href="{WA_CHAT}" target="_blank" rel="noopener">Chat with us{I_ARROW}</a></div>
 </div></section>'''
 
-    body = hero + factstrip + intro + treatments_teaser + doctors_teaser + process + cta
+    body = hero + factstrip + intro + treatments_teaser + audience + doctors_teaser + process + faq + cta
     return page(
         "Specialist Dental Clinic in Faridabad",
         "Dr. Girdhar's DentAvenue — a specialist-led dental practice in Faridabad, combining endodontics and orthodontics.",
