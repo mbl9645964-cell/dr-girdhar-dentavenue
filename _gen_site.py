@@ -211,7 +211,7 @@ def build_index():
 </div></section>'''
 
     doctors_teaser = f'''<section class="section bg-ink"><div class="wrap">
-{section_head("The doctors", "Specialist care, academic rigour.", "", center=True, light=True)}
+{section_head("The doctors", "Specialist care, academic rigour.", "The clinic's founding specialists and owners, each trained in a single discipline.", center=True, light=True)}
 <div class="doc-circles stagger" data-reveal>
 <div class="doc-circle"><div class="doc-circle__ph">{I_MICROSCOPE}</div><h3>Dr. Divyam Girdhar</h3><p class="doc-circle__role">Endodontics &amp; Conservative Dentistry</p><span class="doc-circle__rule"></span><p>BDS, MDS — Root Canal Specialist. Ex. Senior Resident, PGIDS Rohtak.</p></div>
 <div class="doc-circle"><div class="doc-circle__ph">{I_BRACES}</div><h3>Dr. Nikita Mohelay Girdhar</h3><p class="doc-circle__role">Orthodontics &amp; Dentofacial Orthopaedics</p><span class="doc-circle__rule"></span><p>BDS, MDS, PhD (in progress) — Aligners &amp; myofunctional therapy specialist.</p></div>
