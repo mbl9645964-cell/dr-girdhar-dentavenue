@@ -2,9 +2,17 @@
 # -*- coding: utf-8 -*-
 """Dr. Girdhar's DentAvenue — Faridabad — from-scratch static site generator."""
 import os
+import hashlib
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 IMG = "assets/img/"
+
+def _ver(rel_path):
+    with open(os.path.join(BASE, rel_path), "rb") as f:
+        return hashlib.md5(f.read()).hexdigest()[:8]
+
+CSS_VER = _ver("assets/css/site.css")
+JS_VER = _ver("assets/js/site.js")
 
 PHONE_DISPLAY = "+91 88261 25929"
 PHONE_TEL = "tel:+918826125929"
@@ -138,7 +146,7 @@ def page(title, description, body, active="", extra_head=""):
 <meta name="description" content="{description}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/site.css?v={CSS_VER}">
 {extra_head}
 </head>
 <body>
@@ -207,7 +215,7 @@ def page(title, description, body, active="", extra_head=""):
 <a class="is-primary" href="{WA_BOOK}" target="_blank" rel="noopener">{I_ARROW}<span>Book</span></a>
 </div></nav>
 
-<script src="assets/js/site.js"></script>
+<script src="assets/js/site.js?v={JS_VER}"></script>
 </body>
 </html>'''
 
