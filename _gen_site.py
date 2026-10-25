@@ -17,7 +17,7 @@ WA_CHAT = wa("Hello Dr. Girdhar's DentAvenue, how can I help you?")
 EMAIL = "dentavenuefaridabad@gmail.com"
 CITY = "Faridabad, Haryana"
 HOURS_1 = "Mon–Sat · 5:00 pm – 9:00 pm"
-HOURS_2 = "Sunday · 10:00 am – 2:00 pm"
+HOURS_2 = "Sunday · 10:00 am – 2:00 pm / by appointment"
 
 NAV = [
     ("index.html", "Home"),
@@ -107,7 +107,7 @@ def page(title, description, body, active="", extra_head=""):
 <div class="wrap footer-grid">
 <div>
 <p class="footer-brand__name">Dr. Girdhar's DentAvenue</p>
-<p class="footer-brand__stmt">A specialist-led dental practice in {CITY} — endodontics and orthodontics, under one roof.</p>
+<p class="footer-brand__stmt">A specialist dental clinic in {CITY} — every treatment led by the right specialist, under one roof.</p>
 </div>
 <div class="footer-col"><h5>Explore</h5><ul>
 <li><a href="about.html">About</a></li><li><a href="doctors.html">Doctors</a></li>
@@ -161,7 +161,7 @@ def build_index():
 <div data-reveal>
 <span class="hero__eyebrow">{CITY}</span>
 <h1 class="hero__title">Specialist dental care, <em>precisely</em> delivered.</h1>
-<p class="hero__lead">Root canal therapy and orthodontics, led by two specialists under one roof — Dr. Divyam Girdhar (Endodontics) and Dr. Nikita Mohelay Girdhar (Orthodontics).</p>
+<p class="hero__lead">A specialised dental clinic in {CITY} — every treatment, from a root canal to a complete smile correction, planned and delivered by the specialist it actually needs.</p>
 <div class="hero__actions">
 <a class="btn btn--cream" href="{WA_BOOK}" target="_blank" rel="noopener">Book an Appointment</a>
 <a class="text-link text-link--light" href="{WA_CHAT}" target="_blank" rel="noopener">{I_WA}<span>WhatsApp us</span></a>
@@ -181,7 +181,7 @@ def build_index():
 </section>'''
 
     factstrip = f'''<section class="factstrip"><div class="wrap factstrip__row" data-reveal>
-<div class="fact"><span class="fact__no">01</span><h3>Specialist-led</h3><p>A root canal specialist and an orthodontist, not generalists covering everything.</p></div>
+<div class="fact"><span class="fact__no">01</span><h3>Specialist-led</h3><p>Every treatment handled by a trained specialist in that discipline — not one generalist covering everything.</p></div>
 <div class="fact"><span class="fact__no">02</span><h3>Academic rigour</h3><p>Both doctors teach and research alongside clinical practice.</p></div>
 <div class="fact"><span class="fact__no">03</span><h3>Microscope-assisted care</h3><p>Precision techniques for complex root canal and retreatment cases.</p></div>
 <div class="fact"><span class="fact__no">04</span><h3>Personalised planning</h3><p>Every treatment plan is built around your teeth, bite and goals.</p></div>
@@ -190,8 +190,8 @@ def build_index():
     intro = f'''<section class="section bg-card"><div class="wrap split">
 <div data-reveal>
 <span class="eyebrow">Our approach</span>
-<h2 class="display-2">Two specialities, one considered plan.</h2>
-<p class="lead" style="margin-top:1.3rem">Dr. Girdhar's DentAvenue brings together an endodontist and an orthodontist — so root canal care, restorative work and orthodontic treatment are planned together, not handed between unconnected clinics.</p>
+<h2 class="display-2">All specialities, one considered plan.</h2>
+<p class="lead" style="margin-top:1.3rem">Dr. Girdhar's DentAvenue brings together specialists across root canal treatment, orthodontics, implants and restorative dentistry — so every treatment is planned by the specialist it actually needs, rather than handed between unconnected clinics.</p>
 <p class="muted" style="margin-top:1rem">Every case starts with a careful diagnosis and an honest conversation about what it actually needs — explained in plain language, before any treatment begins.</p>
 <a class="text-link" style="margin-top:1.6rem" href="doctors.html">Meet the doctors{I_ARROW}</a>
 </div>
@@ -252,6 +252,8 @@ def build_index():
 <div class="feat-grid stagger" data-reveal>
 <div class="feat"><h3>Tooth pain or infection</h3><p>Needing a root canal assessment, including teeth that have been treated before.</p></div>
 <div class="feat"><h3>Crowding or bite issues</h3><p>Considering aligners or braces, for a teenager or as an adult.</p></div>
+<div class="feat"><h3>Missing teeth</h3><p>Exploring dental implants or bridges to restore function and appearance.</p></div>
+<div class="feat"><h3>Gum concerns or sensitivity</h3><p>Bleeding, receding or sensitive gums that need a proper assessment.</p></div>
 <div class="feat"><h3>A complex or unusual case</h3><p>Referred by another dentist for a second opinion or specialist management.</p></div>
 <div class="feat"><h3>A cleft lip &amp; palate case</h3><p>Requiring coordinated orthodontic planning across stages of growth.</p></div>
 </div>
@@ -290,7 +292,7 @@ def build_about():
 <nav aria-label="Breadcrumb" class="muted" style="font-size:.85rem;margin-bottom:1.6rem"><a href="index.html">Home</a> / About</nav>
 <span class="eyebrow">About the practice</span>
 <h1 class="display-1" style="max-width:17ch">A new practice, built on specialist experience.</h1>
-<p class="lead" style="margin-top:1.4rem;max-width:60ch">Dr. Girdhar's DentAvenue opened in 2025 in {CITY} — founded around a simple idea: root canal care and orthodontic treatment deserve a specialist each, working together.</p>
+<p class="lead" style="margin-top:1.4rem;max-width:60ch">Dr. Girdhar's DentAvenue opened in 2025 in {CITY} — founded and personally run by Dr. Divyam Girdhar and Dr. Nikita Mohelay Girdhar, its two owner-specialists, around a simple idea: every treatment deserves the specialist it actually needs.</p>
 </div></section>'''
 
     story = f'''<section class="section bg-card"><div class="wrap split split--rev">
@@ -330,7 +332,7 @@ def build_doctors():
 <nav aria-label="Breadcrumb" class="muted" style="font-size:.85rem;margin-bottom:1.6rem"><a href="index.html">Home</a> / Doctors</nav>
 <span class="eyebrow">The doctors</span>
 <h1 class="display-1" style="max-width:16ch">Specialist care, academic rigour.</h1>
-<p class="lead" style="margin-top:1.4rem;max-width:60ch">Two specialists, each trained and experienced in a single discipline — endodontics and orthodontics.</p>
+<p class="lead" style="margin-top:1.4rem;max-width:60ch">Two specialists, each trained and experienced in a single discipline — endodontics and orthodontics — and the founding owners of the clinic.</p>
 </div></section>'''
 
     divyam = f'''<section class="section bg-card"><div class="wrap doc" data-reveal>
@@ -407,7 +409,7 @@ def build_treatments():
 <nav aria-label="Breadcrumb" class="muted" style="font-size:.85rem;margin-bottom:1.6rem"><a href="index.html">Home</a> / Treatments</nav>
 <span class="eyebrow">Treatments</span>
 <h1 class="display-1" style="max-width:18ch">Every treatment, led by the right specialist.</h1>
-<p class="lead" style="margin-top:1.4rem;max-width:60ch">Root canal and orthodontic care are our specialist focus — alongside the restorative and cosmetic treatments every smile occasionally needs.</p>
+<p class="lead" style="margin-top:1.4rem;max-width:60ch">From root canal therapy and orthodontics to implants, gum care and cosmetic dentistry — every treatment here is led by the specialist trained for it.</p>
 </div></section>'''
 
     featured = [
@@ -424,13 +426,14 @@ def build_treatments():
 <div class="tl-body"><h3>{title}</h3><span class="section-head__rule"></span><p>{desc}</p><a class="text-link text-link--light" href="{WA_BOOK}" target="_blank" rel="noopener">Enquire about this{I_ARROW}</a></div>
 </div>''')
     timeline = f'''<section class="section bg-ink"><div class="wrap">
-{section_head("Specialist focus", "Our two core disciplines, in depth.", "", light=True)}
+{section_head("Specialist focus", "Led by the right specialist, every time.", "", light=True)}
 <div class="timeline">{"".join(tl_items)}</div>
 </div></section>'''
 
     items = [
         ("cosmetic", I_TOOTH, "Cosmetic Dentistry", "Veneers, professional whitening and smile design, planned around your natural proportions for results that look like you."),
         ("restorative", I_TOOTH, "Crowns, Bridges &amp; Restorative Care", "Tooth-coloured restorations for damaged or worn teeth, including full-mouth restorative planning."),
+        ("gums", I_TOOTH, "Gum &amp; Periodontal Care", "Assessment and treatment for bleeding, receding or sensitive gums, alongside deep cleaning where needed."),
         ("preventive", I_TOOTH, "Preventive &amp; Family Dentistry", "Check-ups, cleaning and fluoride care for every member of the family, from first visit onward."),
         ("cleft", I_BRACES, "Cleft Lip &amp; Palate Orthodontics", "Specialised orthodontic planning across the stages of facial growth and dental development."),
     ]
