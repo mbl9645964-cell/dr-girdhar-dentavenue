@@ -38,6 +38,17 @@
       reveals.forEach(function(el){ el.classList.add("in"); });
     }
 
+    document.querySelectorAll("[data-slideshow]").forEach(function(box){
+      var imgs = box.querySelectorAll("img");
+      if(imgs.length < 2) return;
+      var i = 0;
+      setInterval(function(){
+        imgs[i].classList.remove("is-active");
+        i = (i + 1) % imgs.length;
+        imgs[i].classList.add("is-active");
+      }, 4000);
+    });
+
     document.querySelectorAll("form[data-wa-form]").forEach(function(f){
       f.addEventListener("submit", function(e){
         e.preventDefault();

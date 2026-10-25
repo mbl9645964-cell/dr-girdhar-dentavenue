@@ -172,8 +172,11 @@ def build_index():
 <div><dt>Location</dt><dd>{CITY}</dd></div>
 </dl>
 </div>
-<div class="hero__side has-img" data-reveal>
+<div class="hero__side has-img is-slideshow" data-reveal data-slideshow>
+<img src="{IMG}room-real-1.jpg" alt="Treatment room at Dr. Girdhar's DentAvenue" class="is-active">
 <img src="{IMG}room-1.jpg" alt="Treatment room at Dr. Girdhar's DentAvenue">
+<img src="{IMG}room-2.jpg" alt="Treatment room at Dr. Girdhar's DentAvenue">
+<img src="{IMG}room-3.jpg" alt="Treatment room at Dr. Girdhar's DentAvenue">
 <span class="hero__side__tag">The clinic &middot; {CITY}</span>
 </div>
 </div>
