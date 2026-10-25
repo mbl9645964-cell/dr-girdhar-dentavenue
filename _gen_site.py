@@ -295,6 +295,14 @@ def build_about():
 <p class="lead" style="margin-top:1.4rem;max-width:60ch">Dr. Girdhar's DentAvenue opened in 2025 in {CITY} — founded and personally run by Dr. Divyam Girdhar and Dr. Nikita Mohelay Girdhar, its two owner-specialists, around a simple idea: every treatment deserves the specialist it actually needs.</p>
 </div></section>'''
 
+    legacy = f'''<section class="section bg-band"><div class="wrap">
+<div data-reveal style="max-width:70ch">
+<span class="eyebrow">A family tradition</span>
+<h2 class="display-2">Dentistry runs in the family.</h2>
+<p class="lead" style="margin-top:1.3rem">Dr. Divyam Girdhar comes from a family of doctors — his parents have run a hospital in Niwana, Haryana for more than 35 years. Dr. Girdhar's DentAvenue carries that tradition into its second generation, now established as its own independent specialist dental practice in {CITY}.</p>
+</div>
+</div></section>'''
+
     story = f'''<section class="section bg-card"><div class="wrap split split--rev">
 <div class="split__media" data-reveal><figure class="frame frame--tall frame--duo"><img src="{IMG}room-3.jpg" alt="Treatment room"></figure></div>
 <div data-reveal>
@@ -320,7 +328,7 @@ def build_about():
 <div class="ctaband__btns"><a class="btn btn--cream" href="doctors.html">Meet the Doctors</a></div>
 </div></section>'''
 
-    body = hero + story + values + cta
+    body = hero + legacy + story + values + cta
     return page("About", "The philosophy behind Dr. Girdhar's DentAvenue, Faridabad.", body, active="about.html")
 
 open(os.path.join(BASE, "about.html"), "w", encoding="utf-8").write(build_about())
