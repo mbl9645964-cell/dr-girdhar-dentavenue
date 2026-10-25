@@ -249,6 +249,19 @@ p:last-child{ margin-bottom:0; }
 .bg-ink .feat h3{ color:var(--cream); }
 .bg-ink .feat p{ color:var(--cream-70); }
 
+.blog-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.8rem,3vw,2.6rem); }
+@media (max-width:900px){ .blog-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .blog-grid{ grid-template-columns:1fr; } }
+.blog-card{ display:block; }
+.blog-card .frame{ aspect-ratio:4/3; margin-bottom:1.3rem; }
+.blog-card__kicker{ display:block; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--copper); margin-bottom:.7rem; }
+.blog-card h3{ font-family:var(--f-serif); font-size:1.18rem; font-weight:600; line-height:1.3; margin-bottom:.6rem; }
+.blog-card p{ font-size:.88rem; color:var(--ink-55); line-height:1.55; }
+.blog-card .text-link{ margin-top:1rem; }
+.article{ max-width:70ch; }
+.article p{ color:var(--ink-70); margin-bottom:1.2rem; font-size:1rem; line-height:1.75; }
+.article h3{ font-family:var(--f-serif); font-size:1.3rem; font-weight:600; margin:2rem 0 .8rem; color:var(--ink); }
+
 /* ------------------------------ Doctors ------------------------------ */
 .doc{ display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(2rem,4vw,3.4rem); align-items:start; }
 .doc--rev .doc__media{ order:2; }

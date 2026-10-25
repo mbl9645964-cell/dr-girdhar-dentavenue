@@ -25,8 +25,83 @@ NAV = [
     ("doctors.html", "Doctors"),
     ("treatments.html", "Treatments"),
     ("clinic.html", "Clinic"),
+    ("blog.html", "Blog"),
     ("contact.html", "Contact"),
 ]
+
+# ================================================================ BLOG =====
+BLOG_POSTS = [
+    {
+        "slug": "signs-you-need-a-root-canal",
+        "img": "room-real-1.jpg",
+        "kicker": "Endodontics",
+        "title": "How to tell if you need a root canal",
+        "excerpt": "Tooth pain doesn't always mean a root canal — but a few specific signs are worth getting checked promptly.",
+        "body": [
+            ("p", "A toothache can come from many places — a cavity, a cracked filling, gum irritation. But certain signs point more specifically to the kind of deep infection that a root canal treats, and it helps to know what to watch for before the pain becomes an emergency."),
+            ("h3", "Signs worth getting checked"),
+            ("p", "Persistent, throbbing pain that doesn't settle with an over-the-counter painkiller is the most common signal. So is sharp sensitivity to hot or cold that lingers well after the stimulus is gone, rather than fading in a few seconds. Swelling or a small pimple-like bump on the gum near a tooth, or a tooth that has darkened in colour, are also reasons to get an assessment rather than wait it out."),
+            ("h3", "Why early assessment matters"),
+            ("p", "The earlier an infected tooth is examined, the more conservative the treatment usually is. Left untreated, an infection can spread beyond the tooth and lead to more complex management later — including retreatment of a tooth that's already had a root canal, which is its own specialised area within endodontics."),
+            ("h3", "What an assessment involves"),
+            ("p", "A proper diagnosis starts with a clinical examination and, where needed, digital imaging to see what's happening beneath the surface. From there, the treatment plan — whether it's a straightforward root canal, a retreatment, or something else entirely — is explained before anything begins."),
+            ("p", "If any of this sounds familiar, it's worth having it looked at rather than waiting for the pain to pass."),
+        ],
+    },
+    {
+        "slug": "aligners-vs-braces",
+        "img": "room-1.jpg",
+        "kicker": "Orthodontics",
+        "title": "Clear aligners vs. traditional braces: what's right for you?",
+        "excerpt": "Both can straighten teeth effectively — the right choice depends on the case, not just preference.",
+        "body": [
+            ("p", "Clear aligners have become a popular alternative to metal braces, and for good reason — they're far less visible and can be removed for eating and brushing. But they aren't automatically the better option for every case, and a proper assessment matters more than the marketing."),
+            ("h3", "What aligners do well"),
+            ("p", "Aligners are well suited to mild-to-moderate crowding, spacing and certain bite corrections, and tend to be more comfortable day-to-day since there's no wire or bracket. Treatment also requires real discipline — they only work if worn for the recommended hours each day."),
+            ("h3", "Where traditional braces still win"),
+            ("p", "More complex bite corrections, significant crowding, or cases that need precise control over tooth movement — particularly in growing patients — are often better managed with traditional braces, sometimes alongside tools like temporary anchorage devices for more demanding corrections."),
+            ("h3", "The honest answer"),
+            ("p", "There isn't a universally \"better\" option — there's a better option for your specific bite, your goals and your lifestyle. That's decided after a detailed assessment of your teeth, jaws and facial proportions, not before one."),
+        ],
+    },
+    {
+        "slug": "life-after-a-root-canal",
+        "img": "room-2.jpg",
+        "kicker": "Endodontics",
+        "title": "Life after a root canal: recovery, do's and don'ts",
+        "excerpt": "A root canal is usually the end of the pain, not the start of a long recovery — here's what to expect.",
+        "body": [
+            ("p", "One of the most persistent myths about root canal treatment is that it's painful or that recovery is difficult. In reality, for most patients, the procedure relieves pain that was already there — and the days after are usually uneventful."),
+            ("h3", "The first few days"),
+            ("p", "Mild sensitivity or tenderness around the treated tooth for a day or two is normal, especially when biting down, and generally settles with a simple over-the-counter painkiller if needed. Avoiding chewing on that side until any temporary filling or crown is finalised is a sensible precaution."),
+            ("h3", "What to avoid"),
+            ("p", "Very hard or sticky foods on the treated tooth in the days immediately after, and skipping the follow-up visit for a permanent restoration — a treated tooth left without its final crown or filling for too long is more vulnerable to fracture."),
+            ("h3", "When to call the clinic"),
+            ("p", "Pain that worsens rather than improves after a few days, noticeable swelling, or a bite that feels distinctly \"off\" are reasons to get in touch rather than wait. These are uncommon, but worth acting on quickly when they happen."),
+        ],
+    },
+    {
+        "slug": "signs-you-need-an-orthodontist",
+        "img": "room-3.jpg",
+        "kicker": "Orthodontics",
+        "title": "5 signs you might need to see an orthodontist",
+        "excerpt": "Orthodontic treatment isn't just about appearance — these signs are worth a specialist opinion at any age.",
+        "body": [
+            ("p", "Orthodontic concerns aren't limited to crooked front teeth, and treatment certainly isn't limited to teenagers. Here are a few signs that are worth a specialist opinion, whichever stage of life you're at."),
+            ("h3", "1. Crowded or overlapping teeth"),
+            ("p", "Beyond appearance, crowding can make teeth genuinely harder to clean properly, which over time raises the risk of decay and gum issues in the spots that are hardest to reach."),
+            ("h3", "2. Noticeable gaps between teeth"),
+            ("p", "Spacing that's widened over time, rather than been there since childhood, is worth having assessed — it can sometimes point to an underlying bite or gum issue rather than being purely cosmetic."),
+            ("h3", "3. Difficulty biting or chewing comfortably"),
+            ("p", "A bite that doesn't meet evenly, or jaw discomfort with regular use, often has an orthodontic component worth investigating."),
+            ("h3", "4. A jaw that shifts or clicks"),
+            ("p", "This can be linked to bite alignment and is worth a joint look between orthodontic and general assessment."),
+            ("h3", "5. You were told to \"wait and see\" years ago"),
+            ("p", "Orthodontic treatment works at any age — the plan is simply adjusted to your bite, bone and goals. If it was raised once and never followed up on, it's worth a fresh look."),
+        ],
+    },
+]
+
 
 def ic(path, size=18):
     return f'<svg class="ic" viewBox="0 0 24 24" width="{size}" height="{size}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{path}</svg>'
@@ -111,7 +186,7 @@ def page(title, description, body, active="", extra_head=""):
 </div>
 <div class="footer-col"><h5>Explore</h5><ul>
 <li><a href="about.html">About</a></li><li><a href="doctors.html">Doctors</a></li>
-<li><a href="treatments.html">Treatments</a></li><li><a href="clinic.html">Clinic</a></li></ul></div>
+<li><a href="treatments.html">Treatments</a></li><li><a href="clinic.html">Clinic</a></li><li><a href="blog.html">Blog</a></li></ul></div>
 <div class="footer-col"><h5>Specialities</h5><ul>
 <li><a href="treatments.html#root-canal">Root Canal Therapy</a></li><li><a href="treatments.html#aligners">Aligners &amp; Orthodontics</a></li>
 <li><a href="treatments.html#implants">Dental Implants</a></li><li><a href="treatments.html#cosmetic">Cosmetic Dentistry</a></li></ul></div>
@@ -275,12 +350,25 @@ def build_index():
 <div style="max-width:74ch;margin-inline:auto" data-reveal>{faq_html}<div class="rule"></div></div>
 </div></section>'''
 
+    blog_cards = "".join(f'''<a class="blog-card" href="blog-{p['slug']}.html">
+<figure class="frame frame--duo"><img src="{IMG}{p['img']}" alt="{p['title']}"></figure>
+<span class="blog-card__kicker">{p['kicker']}</span>
+<h3>{p['title']}</h3>
+<p>{p['excerpt']}</p>
+<span class="text-link">Read more{I_ARROW}</span>
+</a>''' for p in BLOG_POSTS[:3])
+    blog_teaser = f'''<section class="section bg-band"><div class="wrap">
+{section_head("From the blog", "Notes on dental health.", "Plain-language explainers on the questions we hear most often in clinic.")}
+<div class="blog-grid stagger" data-reveal>{blog_cards}</div>
+<p style="margin-top:2.2rem" data-reveal><a class="text-link" href="blog.html">View all articles{I_ARROW}</a></p>
+</div></section>'''
+
     cta = f'''<section class="ctaband"><div class="wrap ctaband__row" data-reveal>
 <div><span class="eyebrow eyebrow--light">Book your visit</span><h2>Ready when you are.</h2><p>Message us on WhatsApp or call the clinic — new patients are always welcome.</p></div>
 <div class="ctaband__btns"><a class="btn btn--cream" href="{WA_BOOK}" target="_blank" rel="noopener">Book an Appointment</a><a class="text-link text-link--light" href="{WA_CHAT}" target="_blank" rel="noopener">Chat with us{I_ARROW}</a></div>
 </div></section>'''
 
-    body = hero + factstrip + intro + treatments_teaser + audience + doctors_teaser + philosophy + technology + process + faq + cta
+    body = hero + factstrip + intro + treatments_teaser + audience + doctors_teaser + philosophy + technology + process + blog_teaser + faq + cta
     return page(
         "Specialist Dental Clinic in Faridabad",
         "Dr. Girdhar's DentAvenue — a specialist-led dental practice in Faridabad, combining endodontics and orthodontics.",
@@ -527,6 +615,83 @@ def build_contact():
 
 open(os.path.join(BASE, "contact.html"), "w", encoding="utf-8").write(build_contact())
 print("contact.html written")
+
+
+def build_blog_index():
+    hero = f'''<section class="section" style="padding-top:clamp(3rem,6vw,4.5rem)"><div class="wrap">
+<nav aria-label="Breadcrumb" class="muted" style="font-size:.85rem;margin-bottom:1.6rem"><a href="index.html">Home</a> / Blog</nav>
+<span class="eyebrow">From the clinic</span>
+<h1 class="display-1" style="max-width:18ch">Notes on dental health, from our specialists.</h1>
+<p class="lead" style="margin-top:1.4rem;max-width:60ch">Plain-language explainers on the questions we hear most often in clinic.</p>
+</div></section>'''
+
+    cards = []
+    for post in BLOG_POSTS:
+        cards.append(f'''<a class="blog-card" href="blog-{post['slug']}.html">
+<figure class="frame frame--duo"><img src="{IMG}{post['img']}" alt="{post['title']}"></figure>
+<span class="blog-card__kicker">{post['kicker']}</span>
+<h3>{post['title']}</h3>
+<p>{post['excerpt']}</p>
+<span class="text-link">Read more{I_ARROW}</span>
+</a>''')
+    grid = f'''<section class="section bg-card"><div class="wrap">
+<div class="blog-grid stagger" data-reveal>{"".join(cards)}</div>
+</div></section>'''
+
+    cta = f'''<section class="ctaband"><div class="wrap ctaband__row" data-reveal>
+<div><span class="eyebrow eyebrow--light">Have a question?</span><h2>Ask us directly.</h2><p>Not every question needs a Google search — message us and we'll answer it properly.</p></div>
+<div class="ctaband__btns"><a class="btn btn--cream" href="{WA_CHAT}" target="_blank" rel="noopener">WhatsApp Us</a></div>
+</div></section>'''
+
+    body = hero + grid + cta
+    return page("Blog", "Dental health articles from Dr. Girdhar's DentAvenue, Faridabad.", body, active="blog.html")
+
+open(os.path.join(BASE, "blog.html"), "w", encoding="utf-8").write(build_blog_index())
+print("blog.html written")
+
+def build_blog_post(post, idx):
+    hero = f'''<section class="section" style="padding-top:clamp(3rem,6vw,4.5rem)"><div class="wrap">
+<nav aria-label="Breadcrumb" class="muted" style="font-size:.85rem;margin-bottom:1.6rem"><a href="index.html">Home</a> / <a href="blog.html">Blog</a> / {post['title']}</nav>
+<span class="eyebrow">{post['kicker']}</span>
+<h1 class="display-1" style="max-width:20ch">{post['title']}</h1>
+</div></section>'''
+
+    media = f'''<section class="section bg-card" style="padding-top:0"><div class="wrap">
+<figure class="frame frame--duo frame--tall" style="max-width:900px;margin-inline:auto"><img src="{IMG}{post['img']}" alt="{post['title']}"></figure>
+</div></section>'''
+
+    parts = []
+    for tag, text in post["body"]:
+        parts.append(f"<{tag}>{text}</{tag}>")
+    article = f'''<section class="section bg-card" style="padding-top:0"><div class="wrap">
+<div class="article" style="margin-inline:auto" data-reveal>{"".join(parts)}</div>
+</div></section>'''
+
+    others = [p for p in BLOG_POSTS if p["slug"] != post["slug"]][:3]
+    more_cards = "".join(f'''<a class="blog-card" href="blog-{o['slug']}.html">
+<figure class="frame frame--duo"><img src="{IMG}{o['img']}" alt="{o['title']}"></figure>
+<span class="blog-card__kicker">{o['kicker']}</span>
+<h3>{o['title']}</h3>
+<p>{o['excerpt']}</p>
+<span class="text-link">Read more{I_ARROW}</span>
+</a>''' for o in others)
+    more = f'''<section class="section bg-band"><div class="wrap">
+{section_head("More from the blog", "Related articles.")}
+<div class="blog-grid stagger" data-reveal>{more_cards}</div>
+</div></section>'''
+
+    cta = f'''<section class="ctaband"><div class="wrap ctaband__row" data-reveal>
+<div><span class="eyebrow eyebrow--light">Not sure what you need?</span><h2>Tell us your concern — we&rsquo;ll recommend a plan.</h2></div>
+<div class="ctaband__btns"><a class="btn btn--cream" href="{WA_BOOK}" target="_blank" rel="noopener">WhatsApp Us</a></div>
+</div></section>'''
+
+    body = hero + media + article + more + cta
+    return page(post["title"], post["excerpt"], body, active="blog.html")
+
+for idx, post in enumerate(BLOG_POSTS):
+    fname = f"blog-{post['slug']}.html"
+    open(os.path.join(BASE, fname), "w", encoding="utf-8").write(build_blog_post(post, idx))
+    print(fname + " written")
 
 # ====================================================== PRIVACY/DISCLAIMER
 def build_legal(title, active, paras):
