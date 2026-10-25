@@ -239,6 +239,15 @@ p:last-child{ margin-bottom:0; }
 .feat p{ font-size:.88rem; color:var(--ink-55); line-height:1.55; margin:0; }
 @media (max-width:900px){ .feat-grid{ grid-template-columns:1fr 1fr; } }
 @media (max-width:560px){ .feat-grid{ grid-template-columns:1fr; } }
+.feat-grid--3{ grid-template-columns:repeat(3,1fr); }
+@media (max-width:900px){ .feat-grid--3{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .feat-grid--3{ grid-template-columns:1fr; } }
+.bg-ink .feat-grid{ background:var(--line-dark); border-color:var(--line-dark); }
+.bg-ink .feat{ background:#16222B; }
+.bg-ink .feat:hover{ background:#1C3B38; }
+.bg-ink .feat__no{ color:var(--copper); }
+.bg-ink .feat h3{ color:var(--cream); }
+.bg-ink .feat p{ color:var(--cream-70); }
 
 /* ------------------------------ Doctors ------------------------------ */
 .doc{ display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(2rem,4vw,3.4rem); align-items:start; }

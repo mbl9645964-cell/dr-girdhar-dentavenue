@@ -253,7 +253,7 @@ def build_index():
 
     audience = f'''<section class="section bg-band"><div class="wrap">
 {section_head("Who we see", "Specialist care for specific concerns.", "If any of these sound familiar, a consultation is the right next step.")}
-<div class="feat-grid stagger" data-reveal>
+<div class="feat-grid feat-grid--3 stagger" data-reveal>
 <div class="feat"><h3>Tooth pain or infection</h3><p>Needing a root canal assessment, including teeth that have been treated before.</p></div>
 <div class="feat"><h3>Crowding or bite issues</h3><p>Considering aligners or braces, for a teenager or as an adult.</p></div>
 <div class="feat"><h3>Missing teeth</h3><p>Exploring dental implants or bridges to restore function and appearance.</p></div>
