@@ -193,7 +193,8 @@ def build_index():
 <h2 class="display-2">All specialities, one considered plan.</h2>
 <p class="lead" style="margin-top:1.3rem">Dr. Girdhar's DentAvenue brings together specialists across root canal treatment, orthodontics, implants and restorative dentistry — so every treatment is planned by the specialist it actually needs, rather than handed between unconnected clinics.</p>
 <p class="muted" style="margin-top:1rem">Every case starts with a careful diagnosis and an honest conversation about what it actually needs — explained in plain language, before any treatment begins.</p>
-<a class="text-link" style="margin-top:1.6rem" href="doctors.html">Meet the doctors{I_ARROW}</a>
+<p class="muted" style="margin-top:1rem">A family of dentists — Dr. Divyam Girdhar's parents are doctors too, and this practice carries that tradition into its second generation.</p>
+<a class="text-link" style="margin-top:1.6rem" href="about.html">Our story{I_ARROW}</a>
 </div>
 <div class="split__media" data-reveal><figure class="frame frame--tall frame--duo"><img src="{IMG}room-2.jpg" alt="Treatment room"></figure></div>
 </div></section>'''
