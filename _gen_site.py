@@ -41,7 +41,7 @@ NAV = [
 BLOG_POSTS = [
     {
         "slug": "signs-you-need-a-root-canal",
-        "img": "xray.jpg",
+        "img": "treatment.jpg",
         "kicker": "Endodontics",
         "title": "How to tell if you need a root canal",
         "excerpt": "Tooth pain doesn't always mean a root canal — but a few specific signs are worth getting checked promptly.",
@@ -74,7 +74,7 @@ BLOG_POSTS = [
     },
     {
         "slug": "life-after-a-root-canal",
-        "img": "treatment.jpg",
+        "img": "lounge.jpg",
         "kicker": "Endodontics",
         "title": "Life after a root canal: recovery, do's and don'ts",
         "excerpt": "A root canal is usually the end of the pain, not the start of a long recovery — here's what to expect.",
