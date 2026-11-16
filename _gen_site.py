@@ -298,7 +298,7 @@ def build_index():
 </div></section>'''
 
     doctors_teaser = f'''<section class="section bg-ink"><div class="wrap">
-{section_head("The doctors", "Specialist care, academic rigour.", "The clinic's founding doctors.", center=True, light=True)}
+{section_head("The doctors", "Care backed by academic rigour.", "The clinic's founding doctors.", center=True, light=True)}
 <div class="doc-circles stagger" data-reveal>
 <div class="doc-circle"><div class="doc-circle__ph"><img src="{IMG}dr-divyam.jpg" alt="Dr. Divyam Girdhar"></div><h3>Dr. Divyam Girdhar</h3><p class="doc-circle__role">Endodontics &amp; Conservative Dentistry</p><span class="doc-circle__rule"></span><p>BDS, MDS — Root Canal Specialist. Ex. Senior Resident, PGIDS Rohtak.</p></div>
 <div class="doc-circle"><div class="doc-circle__ph"><img src="{IMG}dr-nikita.jpg" alt="Dr. Nikita Mohelay Girdhar"></div><h3>Dr. Nikita Mohelay Girdhar</h3><p class="doc-circle__role">Orthodontics &amp; Dentofacial Orthopaedics</p><span class="doc-circle__rule"></span><p>BDS, MDS — Aligners &amp; myofunctional therapy specialist.</p></div>
@@ -336,7 +336,7 @@ def build_index():
 </div></section>'''
 
     audience = f'''<section class="section bg-band"><div class="wrap">
-{section_head("Who we see", "Specialist care for specific concerns.", "If any of these sound familiar, a consultation is the right next step.")}
+{section_head("Who we see", "Care for specific concerns.", "If any of these sound familiar, a consultation is the right next step.")}
 <div class="feat-grid feat-grid--3 stagger" data-reveal>
 <div class="feat"><h3>Tooth pain or infection</h3><p>Needing a root canal assessment, including teeth that have been treated before.</p></div>
 <div class="feat"><h3>Crowding or bite issues</h3><p>Considering aligners or braces, for a teenager or as an adult.</p></div>
@@ -380,7 +380,7 @@ def build_index():
     body = hero + factstrip + intro + treatments_teaser + audience + doctors_teaser + technology + process + blog_teaser + faq + cta
     return page(
         "Specialist Dental Clinic in Faridabad",
-        "Dr. Girdhar's DentAvenue — a specialist-led dental practice in Faridabad, combining endodontics and orthodontics.",
+        "Dr. Girdhar's DentAvenue — a dental clinic in Faridabad offering complete care under one roof.",
         body, active="index.html"
     )
 
@@ -445,7 +445,7 @@ def build_doctors():
     hero = f'''<section class="section" style="padding-top:clamp(3rem,6vw,4.5rem)"><div class="wrap">
 <nav aria-label="Breadcrumb" class="muted" style="font-size:.85rem;margin-bottom:1.6rem"><a href="index.html">Home</a> / Doctors</nav>
 <span class="eyebrow">The doctors</span>
-<h1 class="display-1" style="max-width:16ch">Specialist care, academic rigour.</h1>
+<h1 class="display-1" style="max-width:16ch">Care backed by academic rigour.</h1>
 <p class="lead" style="margin-top:1.4rem;max-width:60ch">The clinic's founding doctors — an endodontist and an orthodontist.</p>
 </div></section>'''
 
@@ -540,7 +540,7 @@ def build_treatments():
 <div class="tl-body"><h3>{title}</h3><span class="section-head__rule"></span><p>{desc}</p><a class="text-link text-link--light" href="{WA_BOOK}" target="_blank" rel="noopener">Enquire about this{I_ARROW}</a></div>
 </div>''')
     timeline = f'''<section class="section bg-ink"><div class="wrap">
-{section_head("Specialist focus", "Led by the right specialist, every time.", "", light=True)}
+{section_head("Our treatments", "Care for every need.", "", light=True)}
 <div class="timeline">{"".join(tl_items)}</div>
 </div></section>'''
 
