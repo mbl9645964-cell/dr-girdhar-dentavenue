@@ -194,11 +194,9 @@ def page(title, description, body, active="", extra_head=""):
 <div class="footer-col"><h5>Explore</h5><ul>
 <li><a href="about.html">About</a></li><li><a href="doctors.html">Doctors</a></li>
 <li><a href="treatments.html">Treatments</a></li><li><a href="clinic.html">Clinic</a></li><li><a href="blog.html">Blog</a></li></ul></div>
-<div class="footer-col"><h5>Specialities</h5><ul>
+<div class="footer-col"><h5>Treatments</h5><ul>
 <li><a href="treatments.html#root-canal">Root Canal Therapy</a></li><li><a href="treatments.html#aligners">Aligners &amp; Orthodontics</a></li>
-<li><a href="treatments.html#implants">Dental Implants</a></li><li><a href="treatments.html#cosmetic">Cosmetic Dentistry</a></li>
-<li><a href="treatments.html#cosmetic"><span class="tlist__ic">{I_TOOTH}</span><span class="tlist__body"><h3>Smile Makeover</h3><p>A combined plan to improve the colour, shape and alignment of your smile.</p></span><span class="tlist__arrow">{I_ARROW}</span></a></li>
-<li><a href="treatments.html#screening"><span class="tlist__ic">{I_TOOTH}</span><span class="tlist__body"><h3>Oral Cancer Screening</h3><p>Routine examination to help detect suspicious changes early.</p></span><span class="tlist__arrow">{I_ARROW}</span></a></li></ul></div>
+<li><a href="treatments.html#implants">Dental Implants</a></li><li><a href="treatments.html#cosmetic">Cosmetic Dentistry</a></li></ul></div>
 <div class="footer-col"><h5>Visit</h5><ul>
 <li>{CITY}</li><li><a href="{PHONE_TEL}">{PHONE_DISPLAY}</a></li>
 <li><a href="mailto:{EMAIL}">{EMAIL}</a></li><li>{HOURS_1}</li><li>{HOURS_2}</li></ul></div>
@@ -293,6 +291,8 @@ def build_index():
 <li><a href="treatments.html#aligners"><span class="tlist__ic">{I_BRACES}</span><span class="tlist__body"><h3>Aligners &amp; Orthodontics</h3><p>Comprehensive orthodontic treatment, including complex bite correction and TADs.</p></span><span class="tlist__arrow">{I_ARROW}</span></a></li>
 <li><a href="treatments.html#implants"><span class="tlist__ic">{I_TOOTH}</span><span class="tlist__body"><h3>Dental Implants</h3><p>Long-lasting replacements for missing teeth.</p></span><span class="tlist__arrow">{I_ARROW}</span></a></li>
 <li><a href="treatments.html#cosmetic"><span class="tlist__ic">{I_TOOTH}</span><span class="tlist__body"><h3>Cosmetic Dentistry</h3><p>Teeth whitening, veneers and smile makeovers, planned around your natural proportions.</p></span><span class="tlist__arrow">{I_ARROW}</span></a></li>
+<li><a href="treatments.html#cosmetic"><span class="tlist__ic">{I_TOOTH}</span><span class="tlist__body"><h3>Smile Makeover</h3><p>A combined plan to improve the colour, shape and alignment of your smile.</p></span><span class="tlist__arrow">{I_ARROW}</span></a></li>
+<li><a href="treatments.html#screening"><span class="tlist__ic">{I_TOOTH}</span><span class="tlist__body"><h3>Oral Cancer Screening</h3><p>Routine examination to help detect suspicious changes early.</p></span><span class="tlist__arrow">{I_ARROW}</span></a></li>
 </ul>
 <p style="margin-top:2.2rem" data-reveal><a class="text-link" href="treatments.html">View every treatment{I_ARROW}</a></p>
 </div></section>'''
