@@ -156,7 +156,7 @@ def page(title, description, body, active="", extra_head=""):
 <div class="topbar__info">
 <a href="{PHONE_TEL}">{I_PHONE}<span>{PHONE_DISPLAY}</span></a>
 <a href="{WA_CHAT}" target="_blank" rel="noopener">{I_WA}<span>WhatsApp</span></a>
-<span>{I_CLOCK}<span>{HOURS_1}</span></span>
+<span>{I_CLOCK}<span>Mon–Sat 5–9 pm · Sun 10 am–2 pm (by appt.)</span></span>
 </div>
 <div class="topbar__soc">
 <a href="mailto:{EMAIL}" aria-label="Email">{I_MAIL}</a>
@@ -190,14 +190,16 @@ def page(title, description, body, active="", extra_head=""):
 <div class="wrap footer-grid">
 <div>
 <p class="footer-brand__name">Dr. Girdhar's DentAvenue</p>
-<p class="footer-brand__stmt">A specialist dental clinic in {CITY} — every treatment led by the right specialist, under one roof.</p>
+<p class="footer-brand__stmt">A dental clinic in {CITY} — complete care under one roof.</p>
 </div>
 <div class="footer-col"><h5>Explore</h5><ul>
 <li><a href="about.html">About</a></li><li><a href="doctors.html">Doctors</a></li>
 <li><a href="treatments.html">Treatments</a></li><li><a href="clinic.html">Clinic</a></li><li><a href="blog.html">Blog</a></li></ul></div>
 <div class="footer-col"><h5>Specialities</h5><ul>
 <li><a href="treatments.html#root-canal">Root Canal Therapy</a></li><li><a href="treatments.html#aligners">Aligners &amp; Orthodontics</a></li>
-<li><a href="treatments.html#implants">Dental Implants</a></li><li><a href="treatments.html#cosmetic">Cosmetic Dentistry</a></li></ul></div>
+<li><a href="treatments.html#implants">Dental Implants</a></li><li><a href="treatments.html#cosmetic">Cosmetic Dentistry</a></li>
+<li><a href="treatments.html#cosmetic"><span class="tlist__ic">{I_TOOTH}</span><span class="tlist__body"><h3>Smile Makeover</h3><p>A combined plan to improve the colour, shape and alignment of your smile.</p></span><span class="tlist__arrow">{I_ARROW}</span></a></li>
+<li><a href="treatments.html#screening"><span class="tlist__ic">{I_TOOTH}</span><span class="tlist__body"><h3>Oral Cancer Screening</h3><p>Routine examination to help detect suspicious changes early.</p></span><span class="tlist__arrow">{I_ARROW}</span></a></li></ul></div>
 <div class="footer-col"><h5>Visit</h5><ul>
 <li>{CITY}</li><li><a href="{PHONE_TEL}">{PHONE_DISPLAY}</a></li>
 <li><a href="mailto:{EMAIL}">{EMAIL}</a></li><li>{HOURS_1}</li><li>{HOURS_2}</li></ul></div>
@@ -244,7 +246,7 @@ def build_index():
 <div data-reveal>
 <span class="hero__eyebrow">{CITY}</span>
 <h1 class="hero__title">Specialist dental care, <em>precisely</em> delivered.</h1>
-<p class="hero__lead">A specialised dental clinic in {CITY} — every treatment, from a root canal to a complete smile correction, planned and delivered by the specialist it actually needs.</p>
+<p class="hero__lead">A dental clinic in {CITY} offering complete care — from everyday dentistry to advanced treatment, planned around you.</p>
 <div class="hero__actions">
 <a class="btn btn--cream" href="{WA_BOOK}" target="_blank" rel="noopener">Book an Appointment</a>
 <a class="text-link text-link--light" href="{WA_CHAT}" target="_blank" rel="noopener">{I_WA}<span>WhatsApp us</span></a>
@@ -267,7 +269,7 @@ def build_index():
 </section>'''
 
     factstrip = f'''<section class="factstrip"><div class="wrap factstrip__row" data-reveal>
-<div class="fact"><span class="fact__no">01</span><h3>Specialist-led</h3><p>Every treatment handled by a trained specialist in that discipline — not one generalist covering everything.</p></div>
+<div class="fact"><span class="fact__no">01</span><h3>Trained specialists</h3><p>Each treatment handled by a doctor trained in that discipline.</p></div>
 <div class="fact"><span class="fact__no">02</span><h3>Academic rigour</h3><p>Both doctors teach and research alongside clinical practice.</p></div>
 <div class="fact"><span class="fact__no">03</span><h3>Microscope-assisted care</h3><p>Precision techniques for complex root canal and retreatment cases.</p></div>
 <div class="fact"><span class="fact__no">04</span><h3>Personalised planning</h3><p>Every treatment plan is built around your teeth, bite and goals.</p></div>
@@ -277,40 +279,39 @@ def build_index():
 <div data-reveal>
 <span class="eyebrow">Our approach</span>
 <h2 class="display-2">All specialities, one considered plan.</h2>
-<p class="lead" style="margin-top:1.3rem">Dr. Girdhar's DentAvenue brings together specialists across root canal treatment, orthodontics, implants and restorative dentistry — so every treatment is planned by the specialist it actually needs, rather than handed between unconnected clinics.</p>
-<p class="muted" style="margin-top:1rem">Every case starts with a careful diagnosis and an honest conversation about what it actually needs — explained in plain language, before any treatment begins.</p>
-<p class="muted" style="margin-top:1rem">A family of dentists — Dr. Divyam Girdhar's parents are doctors too, and this practice carries that tradition into its second generation.</p>
+<p class="lead" style="margin-top:1.3rem">Dr. Girdhar's DentAvenue brings every branch of dentistry under one roof — so each treatment is planned by the specialist it actually needs.</p>
+<p class="muted" style="margin-top:1rem">Every case starts with a careful diagnosis and an honest conversation about what it actually needs — explained to your satisfaction, before any treatment begins.</p>
 <a class="text-link" style="margin-top:1.6rem" href="about.html">Our story{I_ARROW}</a>
 </div>
 <div class="split__media" data-reveal><figure class="frame frame--tall frame--duo"><img src="{IMG}room-2.jpg" alt="Treatment room"></figure></div>
 </div></section>'''
 
     treatments_teaser = f'''<section class="section bg-band"><div class="wrap">
-{section_head("What we treat", "Specialist care, under one roof.", "From a painful tooth to a complete smile correction — planned by the specialist it actually needs.")}
+{section_head("What we treat", "Complete care, under one roof.", "From a painful tooth to a complete smile makeover — every branch of dentistry, in one place.")}
 <ul class="tlist" data-reveal>
 <li><a href="treatments.html#root-canal"><span class="tlist__ic">{I_TOOTH}</span><span class="tlist__body"><h3>Root Canal Therapy</h3><p>Microscope-assisted endodontics, including retreatment of previously treated teeth.</p></span><span class="tlist__arrow">{I_ARROW}</span></a></li>
 <li><a href="treatments.html#aligners"><span class="tlist__ic">{I_BRACES}</span><span class="tlist__body"><h3>Aligners &amp; Orthodontics</h3><p>Comprehensive orthodontic treatment, including complex bite correction and TADs.</p></span><span class="tlist__arrow">{I_ARROW}</span></a></li>
 <li><a href="treatments.html#implants"><span class="tlist__ic">{I_TOOTH}</span><span class="tlist__body"><h3>Dental Implants</h3><p>Long-lasting replacements for missing teeth.</p></span><span class="tlist__arrow">{I_ARROW}</span></a></li>
-<li><a href="treatments.html#cosmetic"><span class="tlist__ic">{I_TOOTH}</span><span class="tlist__body"><h3>Cosmetic Dentistry</h3><p>Veneers, whitening and smile design, planned around your natural proportions.</p></span><span class="tlist__arrow">{I_ARROW}</span></a></li>
+<li><a href="treatments.html#cosmetic"><span class="tlist__ic">{I_TOOTH}</span><span class="tlist__body"><h3>Cosmetic Dentistry</h3><p>Teeth whitening, veneers and smile makeovers, planned around your natural proportions.</p></span><span class="tlist__arrow">{I_ARROW}</span></a></li>
 </ul>
 <p style="margin-top:2.2rem" data-reveal><a class="text-link" href="treatments.html">View every treatment{I_ARROW}</a></p>
 </div></section>'''
 
     doctors_teaser = f'''<section class="section bg-ink"><div class="wrap">
-{section_head("The doctors", "Specialist care, academic rigour.", "The clinic's founding specialists and owners, each trained in a single discipline.", center=True, light=True)}
+{section_head("The doctors", "Specialist care, academic rigour.", "The clinic's founding doctors.", center=True, light=True)}
 <div class="doc-circles stagger" data-reveal>
 <div class="doc-circle"><div class="doc-circle__ph"><img src="{IMG}dr-divyam.jpg" alt="Dr. Divyam Girdhar"></div><h3>Dr. Divyam Girdhar</h3><p class="doc-circle__role">Endodontics &amp; Conservative Dentistry</p><span class="doc-circle__rule"></span><p>BDS, MDS — Root Canal Specialist. Ex. Senior Resident, PGIDS Rohtak.</p></div>
-<div class="doc-circle"><div class="doc-circle__ph"><img src="{IMG}dr-nikita.jpg" alt="Dr. Nikita Mohelay Girdhar"></div><h3>Dr. Nikita Mohelay Girdhar</h3><p class="doc-circle__role">Orthodontics &amp; Dentofacial Orthopaedics</p><span class="doc-circle__rule"></span><p>BDS, MDS, PhD (in progress) — Aligners &amp; myofunctional therapy specialist.</p></div>
+<div class="doc-circle"><div class="doc-circle__ph"><img src="{IMG}dr-nikita.jpg" alt="Dr. Nikita Mohelay Girdhar"></div><h3>Dr. Nikita Mohelay Girdhar</h3><p class="doc-circle__role">Orthodontics &amp; Dentofacial Orthopaedics</p><span class="doc-circle__rule"></span><p>BDS, MDS — Aligners &amp; myofunctional therapy specialist.</p></div>
 </div>
 <p class="center" style="margin-top:clamp(2rem,4vw,2.8rem)" data-reveal><a class="text-link text-link--light" href="doctors.html">Meet the doctors{I_ARROW}</a></p>
 </div></section>'''
 
     philosophy = f'''<section class="section bg-card"><div class="wrap split">
 <div data-reveal>
-<div class="quote"><blockquote>Successful endodontic treatment is not simply about treating a tooth — it is about preserving natural tooth structure, restoring function, and providing long-term oral health through careful diagnosis and precise treatment.</blockquote><cite>Dr. Divyam Girdhar, Endodontics</cite></div>
+<div class="quote"><blockquote>Successful endodontic treatment is not simply about treating a tooth — it is about preserving natural tooth structure, restoring function, and providing long-term oral health through careful diagnosis and precise treatment.</blockquote><cite>Dr. Divyam Girdhar, Endodontist</cite></div>
 </div>
 <div data-reveal>
-<div class="quote"><blockquote>No two smiles are the same, and no two treatment plans should be either. Every treatment begins with a detailed assessment of the patient's teeth, jaws and individual concerns.</blockquote><cite>Dr. Nikita Mohelay Girdhar, Orthodontics</cite></div>
+<div class="quote"><blockquote>No two smiles are the same, and no two treatment plans should be either. Every treatment begins with a detailed assessment of the patient's teeth, jaws and individual concerns.</blockquote><cite>Dr. Nikita Mohelay Girdhar, Orthodontist</cite></div>
 </div>
 </div></section>'''
 
@@ -366,7 +367,7 @@ def build_index():
 <span class="text-link">Read more{I_ARROW}</span>
 </a>''' for p in BLOG_POSTS[:3])
     blog_teaser = f'''<section class="section bg-band"><div class="wrap">
-{section_head("From the blog", "Notes on dental health.", "Plain-language explainers on the questions we hear most often in clinic.")}
+{section_head("From the blog", "Notes on dental health.", "Our take on the questions we hear most often in the clinic.")}
 <div class="blog-grid stagger" data-reveal>{blog_cards}</div>
 <p style="margin-top:2.2rem" data-reveal><a class="text-link" href="blog.html">View all articles{I_ARROW}</a></p>
 </div></section>'''
@@ -376,7 +377,7 @@ def build_index():
 <div class="ctaband__btns"><a class="btn btn--cream" href="{WA_BOOK}" target="_blank" rel="noopener">Book an Appointment</a><a class="text-link text-link--light" href="{WA_CHAT}" target="_blank" rel="noopener">Chat with us{I_ARROW}</a></div>
 </div></section>'''
 
-    body = hero + factstrip + intro + treatments_teaser + audience + doctors_teaser + philosophy + technology + process + blog_teaser + faq + cta
+    body = hero + factstrip + intro + treatments_teaser + audience + doctors_teaser + technology + process + blog_teaser + faq + cta
     return page(
         "Specialist Dental Clinic in Faridabad",
         "Dr. Girdhar's DentAvenue — a specialist-led dental practice in Faridabad, combining endodontics and orthodontics.",
@@ -391,26 +392,31 @@ def build_about():
     hero = f'''<section class="section" style="padding-top:clamp(3rem,6vw,4.5rem)"><div class="wrap">
 <nav aria-label="Breadcrumb" class="muted" style="font-size:.85rem;margin-bottom:1.6rem"><a href="index.html">Home</a> / About</nav>
 <span class="eyebrow">About the practice</span>
-<h1 class="display-1" style="max-width:17ch">A new practice, built on specialist experience.</h1>
-<p class="lead" style="margin-top:1.4rem;max-width:60ch">Dr. Girdhar's DentAvenue opened in 2025 in {CITY} — founded and personally run by Dr. Divyam Girdhar and Dr. Nikita Mohelay Girdhar, its two owner-specialists, around a simple idea: every treatment deserves the specialist it actually needs.</p>
+<h1 class="display-1" style="max-width:17ch">A practice based on trust.</h1>
+<p class="lead" style="margin-top:1.4rem;max-width:60ch">Dr. Girdhar's DentAvenue opened in 2025 in {CITY} — founded and personally run by Dr. Divyam Girdhar and Dr. Nikita Mohelay Girdhar, around a simple idea: every patient deserves care that is personal, honest and unhurried.</p>
 </div></section>'''
 
     legacy = f'''<section class="section bg-band"><div class="wrap">
 <div data-reveal style="max-width:70ch">
 <span class="eyebrow">A family tradition</span>
-<h2 class="display-2">Dentistry runs in the family.</h2>
-<p class="lead" style="margin-top:1.3rem">Dr. Divyam Girdhar comes from a family of doctors — his parents have run a hospital in Niwana, Haryana for more than 35 years. Dr. Girdhar's DentAvenue carries that tradition into its second generation, now established as its own independent specialist dental practice in {CITY}.</p>
+<h2 class="display-2">Medicine runs in the family.</h2>
+<p class="lead" style="margin-top:1.3rem">Dr. Girdhar's DentAvenue comes from a family of doctors, with a family hospital in Bhiwani, Haryana — and carries that tradition into its own practice in {CITY}.</p>
 </div>
 </div></section>'''
 
     story = f'''<section class="section bg-card"><div class="wrap split split--rev">
 <div class="split__media" data-reveal><figure class="frame frame--tall frame--duo"><img src="{IMG}room-3.jpg" alt="Treatment room"></figure></div>
 <div data-reveal>
-<span class="eyebrow">Why two specialists</span>
-<h2 class="display-2">Depth, not just convenience.</h2>
-<p class="lead" style="margin-top:1.3rem">Dr. Divyam Girdhar brings over a decade of specialist experience in endodontics, including three years as a Senior Resident at PGIDS Rohtak. Dr. Nikita Mohelay Girdhar brings specialist orthodontic training and an active academic and research profile in orthodontics.</p>
-<p class="muted" style="margin-top:1rem">Together, they plan root canal, restorative and orthodontic care as one — rather than passing patients between unconnected specialists.</p>
+<span class="eyebrow">Our doctors</span>
+<h2 class="display-2">Experience you can rely on.</h2>
+<p class="lead" style="margin-top:1.3rem">Dr. Divyam Girdhar brings over a decade of experience in endodontics, including three years as a Senior Resident at PGIDS Rohtak. Dr. Nikita Mohelay Girdhar brings orthodontic training and an active academic and research profile.</p>
+<p class="muted" style="margin-top:1rem">Personalized treatment for every patient.</p>
 </div>
+</div></section>'''
+
+    mission = f'''<section class="section bg-band"><div class="wrap split">
+<div data-reveal><span class="eyebrow">Our mission</span><h2 class="display-2">Care that puts you first.</h2><p class="lead" style="margin-top:1.3rem">To make good dental care simple, honest and comfortable — so every patient leaves understanding their treatment and confident in their smile.</p></div>
+<div data-reveal><span class="eyebrow">Our vision</span><h2 class="display-2">A healthier smile for every family.</h2><p class="lead" style="margin-top:1.3rem">To be the clinic families in Faridabad trust for lifelong dental health, from a child's first visit onward.</p></div>
 </div></section>'''
 
     values = f'''<section class="section bg-ink"><div class="wrap">
@@ -418,7 +424,7 @@ def build_about():
 <div class="feat-grid stagger" data-reveal>
 <div class="feat"><span class="feat__no">i.</span><h3>Precision first</h3><p>Microscope-assisted technique for root canal and retreatment cases.</p></div>
 <div class="feat"><span class="feat__no">ii.</span><h3>Plans in writing</h3><p>You leave knowing what was found, what is recommended, and why.</p></div>
-<div class="feat"><span class="feat__no">iii.</span><h3>Specialist by discipline</h3><p>Endodontics and orthodontics, each led by a trained specialist.</p></div>
+<div class="feat"><span class="feat__no">iii.</span><h3>Every branch covered</h3><p>Care across every branch of dentistry, under one roof.</p></div>
 <div class="feat"><span class="feat__no">iv.</span><h3>Evidence-based</h3><p>Both doctors maintain active academic and research involvement.</p></div>
 </div>
 </div></section>'''
@@ -428,7 +434,7 @@ def build_about():
 <div class="ctaband__btns"><a class="btn btn--cream" href="doctors.html">Meet the Doctors</a></div>
 </div></section>'''
 
-    body = hero + legacy + story + values + cta
+    body = hero + legacy + story + mission + values + cta
     return page("About", "The philosophy behind Dr. Girdhar's DentAvenue, Faridabad.", body, active="about.html")
 
 open(os.path.join(BASE, "about.html"), "w", encoding="utf-8").write(build_about())
@@ -440,7 +446,7 @@ def build_doctors():
 <nav aria-label="Breadcrumb" class="muted" style="font-size:.85rem;margin-bottom:1.6rem"><a href="index.html">Home</a> / Doctors</nav>
 <span class="eyebrow">The doctors</span>
 <h1 class="display-1" style="max-width:16ch">Specialist care, academic rigour.</h1>
-<p class="lead" style="margin-top:1.4rem;max-width:60ch">Two specialists, each trained and experienced in a single discipline — endodontics and orthodontics — and the founding owners of the clinic.</p>
+<p class="lead" style="margin-top:1.4rem;max-width:60ch">The clinic's founding doctors — an endodontist and an orthodontist.</p>
 </div></section>'''
 
     divyam = f'''<section class="section bg-card"><div class="wrap doc" data-reveal>
@@ -470,7 +476,7 @@ def build_doctors():
 <div>
 <h2 class="display-2">Dr. Nikita Mohelay Girdhar</h2>
 <p class="doc__role">Orthodontics &amp; Dentofacial Orthopaedics</p>
-<p class="doc__qual">BDS (Datta Meghe Institute of Medical Sciences, Wardha) &middot; MDS, Orthodontics (Rajiv Gandhi University of Health Sciences, Karnataka) &middot; Stage II Certified Orthodontist, Indian Board of Orthodontics</p>
+<p class="doc__qual">BDS (Datta Meghe Institute of Medical Sciences, Wardha) &middot; MDS, Orthodontics (Rajiv Gandhi University of Health Sciences, Karnataka)</p>
 <div class="doc__bio">
 <p>Dr. Nikita Girdhar is a specialist orthodontist with extensive experience creating healthy, balanced and confident smiles through personalised orthodontic care. As an Associate Professor in Orthodontics &amp; Dentofacial Orthopaedics, she combines specialist clinical expertise with a meticulous, patient-centred approach to treatment.</p>
 <p>Her philosophy is simple: no two smiles are the same, and no two treatment plans should be either. Every treatment begins with a detailed assessment of the patient's teeth, jaws, facial proportions and individual concerns — developing a personalised plan around the patient's needs, lifestyle and desired outcome.</p>
@@ -484,7 +490,7 @@ def build_doctors():
 <li>Orthodontic care for cleft lip &amp; palate</li>
 <li>Aesthetic smile enhancement</li>
 </ul>
-<p>Dr. N has a particular interest in cleft lip and palate orthodontics, where treatment requires careful planning across different stages of facial growth and dental development, alongside an interest in accelerated orthodontics and temporary anchorage devices. Her recognition as a recipient of the Charley Schultz and William Proffit Research Scholar Awards from the American Association of Orthodontists reflects her continued engagement with advances in orthodontic care. She is currently pursuing a PhD in Cleft Orthodontics.</p>
+<p>Dr. Nikita has a particular interest in cleft lip and palate orthodontics, where treatment requires careful planning across different stages of facial growth and dental development, alongside an interest in accelerated orthodontics and temporary anchorage devices. Her recognition as a recipient of the Charley Schultz and William Proffit Research Scholar Awards from the American Association of Orthodontists reflects her continued engagement with advances in orthodontic care. She is currently pursuing a PhD in Cleft Orthodontics.</p>
 </div>
 </div>
 <div class="doc__media"><figure class="frame frame--tall"><img src="{IMG}dr-nikita.jpg" alt="Dr. Nikita Mohelay Girdhar, Orthodontist"></figure></div>
@@ -496,7 +502,7 @@ def build_doctors():
 <div class="feat"><h3>Senior Residency, PGIDS Rohtak</h3><p>Dr. Divyam completed three years as Senior Resident at one of India&rsquo;s premier centres for advanced dental education.</p></div>
 <div class="feat"><h3>Published research &amp; book chapters</h3><p>Dr. Divyam has published in national and international peer-reviewed journals and contributed chapters to academic dentistry books.</p></div>
 <div class="feat"><h3>AAO Research Scholar Awards</h3><p>Dr. Nikita is a recipient of the Charley Schultz and William Proffit Research Scholar Awards from the American Association of Orthodontists.</p></div>
-<div class="feat"><h3>Stage II IBO Certification</h3><p>Dr. Nikita is a Stage II certified orthodontist under the Indian Board of Orthodontics, with a PhD in Cleft Orthodontics in progress.</p></div>
+<div class="feat"><h3>PhD research, Cleft Orthodontics</h3><p>Dr. Nikita is pursuing a PhD in Cleft Orthodontics alongside her clinical and academic work.</p></div>
 </div>
 </div></section>'''
 
@@ -516,8 +522,8 @@ def build_treatments():
     hero = f'''<section class="section" style="padding-top:clamp(3rem,6vw,4.5rem)"><div class="wrap">
 <nav aria-label="Breadcrumb" class="muted" style="font-size:.85rem;margin-bottom:1.6rem"><a href="index.html">Home</a> / Treatments</nav>
 <span class="eyebrow">Treatments</span>
-<h1 class="display-1" style="max-width:18ch">Every treatment, led by the right specialist.</h1>
-<p class="lead" style="margin-top:1.4rem;max-width:60ch">From root canal therapy and orthodontics to implants, gum care and cosmetic dentistry — every treatment here is led by the specialist trained for it.</p>
+<h1 class="display-1" style="max-width:18ch">Complete dental care, under one roof.</h1>
+<p class="lead" style="margin-top:1.4rem;max-width:60ch">From root canal therapy and orthodontics to implants, gum care, whitening and smile makeovers.</p>
 </div></section>'''
 
     featured = [
@@ -539,7 +545,8 @@ def build_treatments():
 </div></section>'''
 
     items = [
-        ("cosmetic", I_TOOTH, "Cosmetic Dentistry", "Veneers, professional whitening and smile design, planned around your natural proportions for results that look like you."),
+        ("cosmetic", I_TOOTH, "Cosmetic Dentistry", "Teeth whitening, veneers and smile makeovers, planned around your natural proportions for results that look like you."),
+        ("screening", I_TOOTH, "Oral Cancer Screening", "Routine examination to help detect suspicious changes in the mouth early."),
         ("restorative", I_TOOTH, "Crowns, Bridges &amp; Restorative Care", "Tooth-coloured restorations for damaged or worn teeth, including full-mouth restorative planning."),
         ("gums", I_TOOTH, "Gum &amp; Periodontal Care", "Assessment and treatment for bleeding, receding or sensitive gums, alongside deep cleaning where needed."),
         ("preventive", I_TOOTH, "Preventive &amp; Family Dentistry", "Check-ups, cleaning and fluoride care for every member of the family, from first visit onward."),
@@ -596,9 +603,9 @@ print("clinic.html written")
 def build_contact():
     hero = f'''<section class="section" style="padding-top:clamp(3rem,6vw,4.5rem)"><div class="wrap">
 <nav aria-label="Breadcrumb" class="muted" style="font-size:.85rem;margin-bottom:1.6rem"><a href="index.html">Home</a> / Contact</nav>
-<span class="eyebrow">Get in touch</span>
+<span class="eyebrow">Connect with us</span>
 <h1 class="display-1" style="max-width:16ch">Let&rsquo;s find you a time.</h1>
-<p class="lead" style="margin-top:1.4rem;max-width:60ch">Message us on WhatsApp, call the clinic, or send a note below — we usually reply the same day.</p>
+<p class="lead" style="margin-top:1.4rem;max-width:60ch">Message us on WhatsApp, call us on <a href="{PHONE_TEL}"><strong>{PHONE_DISPLAY}</strong></a>, or send a note below — we usually reply the same day.</p>
 </div></section>'''
 
     grid = f'''<section class="section bg-card"><div class="wrap contact-grid">
@@ -629,8 +636,8 @@ def build_blog_index():
     hero = f'''<section class="section" style="padding-top:clamp(3rem,6vw,4.5rem)"><div class="wrap">
 <nav aria-label="Breadcrumb" class="muted" style="font-size:.85rem;margin-bottom:1.6rem"><a href="index.html">Home</a> / Blog</nav>
 <span class="eyebrow">From the clinic</span>
-<h1 class="display-1" style="max-width:18ch">Notes on dental health, from our specialists.</h1>
-<p class="lead" style="margin-top:1.4rem;max-width:60ch">Plain-language explainers on the questions we hear most often in clinic.</p>
+<h1 class="display-1" style="max-width:18ch">Notes on dental health, from our doctors.</h1>
+<p class="lead" style="margin-top:1.4rem;max-width:60ch">Our take on the questions we hear most often in the clinic.</p>
 </div></section>'''
 
     cards = []
