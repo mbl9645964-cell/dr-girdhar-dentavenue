@@ -280,7 +280,7 @@ def build_index():
 <p class="muted" style="margin-top:1rem">Every case starts with a careful diagnosis and an honest conversation about what it actually needs — explained to your satisfaction, before any treatment begins.</p>
 <a class="text-link" style="margin-top:1.6rem" href="about.html">Our story{I_ARROW}</a>
 </div>
-<div class="split__media" data-reveal><figure class="frame frame--tall frame--duo"><img src="{IMG}lounge.jpg" alt="Waiting lounge"></figure></div>
+<div class="split__media" data-reveal><figure class="frame frame--tall frame--duo"><img src="{IMG}exterior.jpg" alt="Dr. Girdhar's DentAvenue entrance"></figure></div>
 </div></section>'''
 
     treatments_teaser = f'''<section class="section bg-band"><div class="wrap">
