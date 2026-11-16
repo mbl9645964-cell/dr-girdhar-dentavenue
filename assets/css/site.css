@@ -386,9 +386,9 @@ p:last-child{ margin-bottom:0; }
 /* ------------------------------ Circular doctor portraits (homepage teaser) ------------------------------ */
 .doc-circles{ display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(2rem,4vw,3.5rem); }
 .doc-circle{ text-align:center; }
-.doc-circle__ph{ width:150px; height:150px; border-radius:50%; margin-inline:auto; border:3px solid var(--cream); background:linear-gradient(170deg,rgba(255,255,255,.1),rgba(255,255,255,.02)); display:flex; align-items:center; justify-content:center; color:var(--copper); margin-bottom:1.3rem; overflow:hidden; }
+.doc-circle__ph{ width:min(320px,100%); aspect-ratio:4/5; border-radius:4px; margin-inline:auto; border:1px solid var(--line-dark); background:linear-gradient(170deg,rgba(255,255,255,.1),rgba(255,255,255,.02)); display:flex; align-items:center; justify-content:center; color:var(--copper); margin-bottom:1.6rem; overflow:hidden; box-shadow:0 30px 60px -34px rgba(0,0,0,.6); }
 .doc-circle__ph svg{ width:40px; height:40px; }
-.doc-circle__ph img{ width:100%; height:100%; object-fit:cover; transform:scale(1.7); transform-origin:50% 27%; }
+.doc-circle__ph img{ width:100%; height:100%; object-fit:cover; object-position:50% 15%; }
 .doc-circle h3{ font-family:var(--f-serif); font-weight:700; font-size:1.3rem; color:var(--cream); }
 .doc-circle__role{ font-size:.74rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--copper); margin:.5rem 0 .9rem; }
 .doc-circle__rule{ width:30px; height:1px; background:var(--copper); margin:0 auto .9rem; }
