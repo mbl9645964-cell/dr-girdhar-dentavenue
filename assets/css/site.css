@@ -394,3 +394,7 @@ p:last-child{ margin-bottom:0; }
 .doc-circle__rule{ width:30px; height:1px; background:var(--copper); margin:0 auto .9rem; }
 .doc-circle p{ color:var(--cream-70); font-size:.9rem; max-width:34ch; margin-inline:auto; }
 @media (max-width:700px){ .doc-circles{ grid-template-columns:1fr; } }
+
+.brand__logo{ height:58px; width:auto; display:block; }
+.footer-logo{ height:64px; width:auto; display:block; margin-bottom:1rem; }
+@media (max-width:560px){ .brand__logo{ height:46px; } }

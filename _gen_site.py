@@ -166,8 +166,7 @@ def page(title, description, body, active="", extra_head=""):
 <header class="site-header" data-header>
 <div class="wrap nav">
 <a class="brand" href="index.html">
-<span class="brand__mark">{I_TOOTH}</span>
-<span class="brand__word"><span class="brand__name">Dr. Girdhar's</span><span class="brand__tag">DentAvenue</span></span>
+<img class="brand__logo" src="{IMG}logo-dark.png" alt="Dr. Girdhar's DentAvenue">
 </a>
 <ul class="nav__menu">{nav_links}</ul>
 <a class="btn nav__cta" href="{WA_BOOK}" target="_blank" rel="noopener">Book an Appointment</a>
@@ -189,7 +188,7 @@ def page(title, description, body, active="", extra_head=""):
 <footer class="site-footer">
 <div class="wrap footer-grid">
 <div>
-<p class="footer-brand__name">Dr. Girdhar's DentAvenue</p>
+<img class="footer-logo" src="{IMG}logo-light.png" alt="Dr. Girdhar's DentAvenue">
 <p class="footer-brand__stmt">A dental clinic in {CITY} — complete care under one roof.</p>
 </div>
 <div class="footer-col"><h5>Explore</h5><ul>
