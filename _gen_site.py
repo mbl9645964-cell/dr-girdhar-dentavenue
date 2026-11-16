@@ -137,7 +137,7 @@ def page(title, description, body, active="", extra_head=""):
         return f'<li><a href="{href}"{cur}>{label}</a></li>'
     nav_links = "".join(_nav_item(href, label) for href, label in NAV)
     mobile_links = "".join(f'<li><a href="{href}">{label}</a></li>' for href, label in NAV)
-    return f'''<!DOCTYPE html>
+    html = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -146,6 +146,10 @@ def page(title, description, body, active="", extra_head=""):
 <meta name="description" content="{description}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#16222B">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<meta property="og:type" content="website"><meta property="og:title" content="{title} — Dr. Girdhar's DentAvenue"><meta property="og:description" content="{description}"><meta property="og:image" content="assets/img/og.jpg">
 <link rel="stylesheet" href="assets/css/site.css?v={CSS_VER}">
 {extra_head}
 </head>
@@ -217,6 +221,12 @@ def page(title, description, body, active="", extra_head=""):
 <script src="assets/js/site.js?v={JS_VER}"></script>
 </body>
 </html>'''
+    import re as _re
+    def _lazy(m):
+        tag=m.group(0)
+        if 'is-active' in tag or 'brand__logo' in tag or 'loading=' in tag: return tag
+        return tag.replace('<img ','<img loading="lazy" decoding="async" ',1)
+    return _re.sub(r'<img [^>]*>',_lazy,html)
 
 def section_head(kicker, title, intro="", center=False, light=False):
     c = " is-center" if center else ""
@@ -615,7 +625,7 @@ def build_contact():
 <nav aria-label="Breadcrumb" class="muted" style="font-size:.85rem;margin-bottom:1.6rem"><a href="index.html">Home</a> / Contact</nav>
 <span class="eyebrow">Connect with us</span>
 <h1 class="display-1" style="max-width:16ch">Let&rsquo;s find you a time.</h1>
-<p class="lead" style="margin-top:1.4rem;max-width:60ch">Message us on WhatsApp, call us on <a href="{PHONE_TEL}"><strong>{PHONE_DISPLAY}</strong></a>, or send a note below — we usually reply the same day.</p>
+<p class="lead" style="margin-top:1.4rem;max-width:60ch">Message us on WhatsApp, call us on <a href="{PHONE_TEL}" style="white-space:nowrap"><strong>{PHONE_DISPLAY}</strong></a>, or send a note below — we usually reply the same day.</p>
 </div></section>'''
 
     grid = f'''<section class="section bg-card"><div class="wrap contact-grid">
