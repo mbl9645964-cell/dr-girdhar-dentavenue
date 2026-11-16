@@ -41,7 +41,7 @@ NAV = [
 BLOG_POSTS = [
     {
         "slug": "signs-you-need-a-root-canal",
-        "img": "room-real-1.jpg",
+        "img": "xray.jpg",
         "kicker": "Endodontics",
         "title": "How to tell if you need a root canal",
         "excerpt": "Tooth pain doesn't always mean a root canal — but a few specific signs are worth getting checked promptly.",
@@ -58,7 +58,7 @@ BLOG_POSTS = [
     },
     {
         "slug": "aligners-vs-braces",
-        "img": "room-1.jpg",
+        "img": "invisalign-sign.jpg",
         "kicker": "Orthodontics",
         "title": "Clear aligners vs. traditional braces: what's right for you?",
         "excerpt": "Both can straighten teeth effectively — the right choice depends on the case, not just preference.",
@@ -74,7 +74,7 @@ BLOG_POSTS = [
     },
     {
         "slug": "life-after-a-root-canal",
-        "img": "room-2.jpg",
+        "img": "treatment.jpg",
         "kicker": "Endodontics",
         "title": "Life after a root canal: recovery, do's and don'ts",
         "excerpt": "A root canal is usually the end of the pain, not the start of a long recovery — here's what to expect.",
@@ -90,7 +90,7 @@ BLOG_POSTS = [
     },
     {
         "slug": "signs-you-need-an-orthodontist",
-        "img": "room-3.jpg",
+        "img": "entrance.jpg",
         "kicker": "Orthodontics",
         "title": "5 signs you might need to see an orthodontist",
         "excerpt": "Orthodontic treatment isn't just about appearance — these signs are worth a specialist opinion at any age.",
@@ -257,10 +257,11 @@ def build_index():
 </dl>
 </div>
 <div class="hero__side has-img is-slideshow" data-reveal data-slideshow>
-<img src="{IMG}room-real-1.jpg" alt="Treatment room at Dr. Girdhar's DentAvenue" class="is-active">
-<img src="{IMG}room-1.jpg" alt="Treatment room at Dr. Girdhar's DentAvenue">
-<img src="{IMG}room-2.jpg" alt="Treatment room at Dr. Girdhar's DentAvenue">
-<img src="{IMG}room-3.jpg" alt="Treatment room at Dr. Girdhar's DentAvenue">
+<img src="{IMG}exterior.jpg" alt="Dr. Girdhar's DentAvenue entrance" class="is-active">
+<img src="{IMG}room-real-1.jpg" alt="Treatment room at Dr. Girdhar's DentAvenue">
+<img src="{IMG}treatment.jpg" alt="Treatment room at Dr. Girdhar's DentAvenue">
+<img src="{IMG}lounge.jpg" alt="Waiting lounge at Dr. Girdhar's DentAvenue">
+<img src="{IMG}xray.jpg" alt="Digital X-ray workstation">
 <span class="hero__side__tag">The clinic &middot; {CITY}</span>
 </div>
 </div>
@@ -282,7 +283,7 @@ def build_index():
 <p class="muted" style="margin-top:1rem">Every case starts with a careful diagnosis and an honest conversation about what it actually needs — explained to your satisfaction, before any treatment begins.</p>
 <a class="text-link" style="margin-top:1.6rem" href="about.html">Our story{I_ARROW}</a>
 </div>
-<div class="split__media" data-reveal><figure class="frame frame--tall frame--duo"><img src="{IMG}room-2.jpg" alt="Treatment room"></figure></div>
+<div class="split__media" data-reveal><figure class="frame frame--tall frame--duo"><img src="{IMG}lounge.jpg" alt="Waiting lounge"></figure></div>
 </div></section>'''
 
     treatments_teaser = f'''<section class="section bg-band"><div class="wrap">
@@ -404,7 +405,7 @@ def build_about():
 </div></section>'''
 
     story = f'''<section class="section bg-card"><div class="wrap split split--rev">
-<div class="split__media" data-reveal><figure class="frame frame--tall frame--duo"><img src="{IMG}room-3.jpg" alt="Treatment room"></figure></div>
+<div class="split__media" data-reveal><figure class="frame frame--tall frame--duo"><img src="{IMG}entrance.jpg" alt="Clinic entrance"></figure></div>
 <div data-reveal>
 <span class="eyebrow">Our doctors</span>
 <h2 class="display-2">Experience you can rely on.</h2>
@@ -530,11 +531,17 @@ def build_treatments():
         ("aligners", I_BRACES, "Aligners &amp; Orthodontics", "Comprehensive orthodontic treatment including clear aligners, growth modification, complex bite correction and temporary anchorage devices (TADs)."),
         ("implants", I_TOOTH, "Dental Implants", "Long-lasting replacements for missing teeth, carefully planned to preserve surrounding bone and teeth."),
     ]
+    TL_PHOTOS = {"root-canal": ("xray.jpg", "Digital X-ray for root canal assessment"), "aligners": ("invisalign-sign.jpg", "Invisalign provider sign")}
+    def tl_photo(anchor, icon):
+        if anchor in TL_PHOTOS:
+            f, alt = TL_PHOTOS[anchor]
+            return f'<figure class="frame" style="height:100%"><img src="{IMG}{f}" alt="{alt}"></figure>'
+        return PH_FRAME(icon, "Add treatment photo")
     tl_items = []
     for i, (anchor, icon, title, desc) in enumerate(featured):
         rev = " tl-item--rev" if i % 2 else ""
         tl_items.append(f'''<div class="tl-item{rev}" id="{anchor}" data-reveal>
-<div class="tl-media">{PH_FRAME(icon, "Add treatment photo")}</div>
+<div class="tl-media">{tl_photo(anchor, icon)}</div>
 <span class="tl-num">{i+1}</span>
 <div class="tl-body"><h3>{title}</h3><span class="section-head__rule"></span><p>{desc}</p><a class="text-link text-link--light" href="{WA_BOOK}" target="_blank" rel="noopener">Enquire about this{I_ARROW}</a></div>
 </div>''')
@@ -581,15 +588,15 @@ def build_clinic():
 
     gallery = f'''<section class="section bg-card"><div class="wrap">
 <div class="gallery" data-reveal>
-<figure class="frame frame--duo g1"><img src="{IMG}room-1.jpg" alt="Treatment room"><span class="frame__tag">Treatment room</span></figure>
-<figure class="frame frame--duo g2"><img src="{IMG}room-2.jpg" alt="Treatment room"><span class="frame__tag">Treatment room</span></figure>
-<figure class="frame frame--duo g3"><img src="{IMG}room-3.jpg" alt="Treatment room"><span class="frame__tag">Treatment room</span></figure>
+<figure class="frame frame--duo g1"><img src="{IMG}treatment.jpg" alt="Treatment room"><span class="frame__tag">Treatment room</span></figure>
+<figure class="frame frame--duo g2"><img src="{IMG}lounge.jpg" alt="Waiting lounge"><span class="frame__tag">Waiting lounge</span></figure>
+<figure class="frame frame--duo g3"><img src="{IMG}xray.jpg" alt="Digital X-ray"><span class="frame__tag">Digital X-ray</span></figure>
 </div>
 </div></section>'''
 
     access = f'''<section class="section bg-ink"><div class="wrap split">
 <div data-reveal><span class="eyebrow eyebrow--light">Getting here</span><h2 class="display-2" style="color:var(--cream)">Easy to find, easy to reach.</h2><p class="mut" style="margin-top:1.2rem">Dr. Girdhar's DentAvenue, {CITY}.</p><a class="text-link text-link--light" style="margin-top:1.4rem" href="contact.html">Full address &amp; directions{I_ARROW}</a></div>
-<div class="split__media" data-reveal>{PH_FRAME(I_PHOTO, "Add exterior photo")}</div>
+<div class="split__media" data-reveal><figure class="frame frame--tall"><img src="{IMG}exterior.jpg" alt="Dr. Girdhar's DentAvenue entrance"></figure></div>
 </div></section>'''
 
     body = hero + gallery + access
