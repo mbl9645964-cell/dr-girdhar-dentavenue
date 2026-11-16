@@ -299,8 +299,8 @@ def build_index():
     doctors_teaser = f'''<section class="section bg-ink"><div class="wrap">
 {section_head("The doctors", "Specialist care, academic rigour.", "The clinic's founding specialists and owners, each trained in a single discipline.", center=True, light=True)}
 <div class="doc-circles stagger" data-reveal>
-<div class="doc-circle"><div class="doc-circle__ph">{I_MICROSCOPE}</div><h3>Dr. Divyam Girdhar</h3><p class="doc-circle__role">Endodontics &amp; Conservative Dentistry</p><span class="doc-circle__rule"></span><p>BDS, MDS — Root Canal Specialist. Ex. Senior Resident, PGIDS Rohtak.</p></div>
-<div class="doc-circle"><div class="doc-circle__ph">{I_BRACES}</div><h3>Dr. Nikita Mohelay Girdhar</h3><p class="doc-circle__role">Orthodontics &amp; Dentofacial Orthopaedics</p><span class="doc-circle__rule"></span><p>BDS, MDS, PhD (in progress) — Aligners &amp; myofunctional therapy specialist.</p></div>
+<div class="doc-circle"><div class="doc-circle__ph"><img src="{IMG}dr-divyam.jpg" alt="Dr. Divyam Girdhar"></div><h3>Dr. Divyam Girdhar</h3><p class="doc-circle__role">Endodontics &amp; Conservative Dentistry</p><span class="doc-circle__rule"></span><p>BDS, MDS — Root Canal Specialist. Ex. Senior Resident, PGIDS Rohtak.</p></div>
+<div class="doc-circle"><div class="doc-circle__ph"><img src="{IMG}dr-nikita.jpg" alt="Dr. Nikita Mohelay Girdhar"></div><h3>Dr. Nikita Mohelay Girdhar</h3><p class="doc-circle__role">Orthodontics &amp; Dentofacial Orthopaedics</p><span class="doc-circle__rule"></span><p>BDS, MDS, PhD (in progress) — Aligners &amp; myofunctional therapy specialist.</p></div>
 </div>
 <p class="center" style="margin-top:clamp(2rem,4vw,2.8rem)" data-reveal><a class="text-link text-link--light" href="doctors.html">Meet the doctors{I_ARROW}</a></p>
 </div></section>'''
@@ -444,7 +444,7 @@ def build_doctors():
 </div></section>'''
 
     divyam = f'''<section class="section bg-card"><div class="wrap doc" data-reveal>
-<div class="doc__media">{PH_FRAME(I_MICROSCOPE, "Add doctor photo")}</div>
+<div class="doc__media"><figure class="frame frame--tall"><img src="{IMG}dr-divyam.jpg" alt="Dr. Divyam Girdhar, Endodontist"></figure></div>
 <div>
 <h2 class="display-2">Dr. Divyam Girdhar</h2>
 <p class="doc__role">Endodontics &amp; Conservative Dentistry — Root Canal Specialist</p>
@@ -487,7 +487,7 @@ def build_doctors():
 <p>Dr. N has a particular interest in cleft lip and palate orthodontics, where treatment requires careful planning across different stages of facial growth and dental development, alongside an interest in accelerated orthodontics and temporary anchorage devices. Her recognition as a recipient of the Charley Schultz and William Proffit Research Scholar Awards from the American Association of Orthodontists reflects her continued engagement with advances in orthodontic care. She is currently pursuing a PhD in Cleft Orthodontics.</p>
 </div>
 </div>
-<div class="doc__media">{PH_FRAME(I_BRACES, "Add doctor photo")}</div>
+<div class="doc__media"><figure class="frame frame--tall"><img src="{IMG}dr-nikita.jpg" alt="Dr. Nikita Mohelay Girdhar, Orthodontist"></figure></div>
 </div></section>'''
 
     recognition = f'''<section class="section bg-ink"><div class="wrap">
