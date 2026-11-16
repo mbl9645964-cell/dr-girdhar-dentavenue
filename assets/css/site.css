@@ -450,3 +450,8 @@ html{ scroll-padding-top:110px; }
 .blog-card .frame img{ transition:transform 1.2s var(--ease); }
 .blog-card:hover .frame img{ transform:scale(1.05); }
 .feat{ transition:background .4s var(--ease), transform .4s var(--ease); }
+
+.footer-bottom{ align-items:center; row-gap:.8rem; }
+.footer-bottom .footer__credit a{ margin-left:.3em; color:var(--cream); border-bottom:1px solid var(--line-dark); }
+.footer-bottom .footer__credit a:hover{ color:var(--copper); border-color:var(--copper); }
+@media (max-width:700px){ .footer-bottom > span{ flex:1 1 100%; } .footer-bottom__links a:first-child{ margin-left:0; } }
