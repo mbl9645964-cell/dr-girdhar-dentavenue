@@ -42,11 +42,18 @@
       var imgs = box.querySelectorAll("img");
       if(imgs.length < 2) return;
       var i = 0;
+      var dots = document.createElement("div"); dots.className = "slide-dots";
+      imgs.forEach(function(_, n){ dots.appendChild(document.createElement("i")); });
+      box.appendChild(dots);
+      var marks = dots.children;
+      function mark(){ for(var k=0;k<marks.length;k++) marks[k].classList.toggle("on", k===i); }
+      mark();
       setInterval(function(){
         imgs[i].classList.remove("is-active");
         i = (i + 1) % imgs.length;
         imgs[i].classList.add("is-active");
-      }, 4000);
+        mark();
+      }, 5000);
     });
 
     document.querySelectorAll("form[data-wa-form]").forEach(function(f){

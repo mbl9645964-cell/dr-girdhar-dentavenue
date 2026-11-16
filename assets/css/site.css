@@ -427,3 +427,26 @@ p:last-child{ margin-bottom:0; }
 @media (hover:none){ .doc-card:hover{ transform:none; } }
 .contact-card p, .footer-col li{ overflow-wrap:anywhere; }
 .contact-grid > *{ min-width:0; }
+
+/* ------------------------------ Desktop polish ------------------------------ */
+html{ scroll-padding-top:110px; }
+::selection{ background:var(--copper); color:#fff; }
+:focus-visible{ outline:2px solid var(--copper); outline-offset:3px; border-radius:2px; }
+.brand__logo{ transition:height .35s var(--ease); }
+.site-header.scrolled .brand__logo{ height:48px; }
+@media (min-width:1000px){
+  .tlist{ display:grid; grid-template-columns:1fr 1fr; column-gap:clamp(2.5rem,5vw,5rem); }
+  .tlist li:last-child{ border-bottom:0; }
+  .tlist li:nth-last-child(-n+2){ border-bottom:1px solid var(--line); }
+}
+.btn:hover{ transform:translateY(-2px); box-shadow:0 14px 28px -16px rgba(22,34,43,.55); }
+.hero__side.has-img.is-slideshow img.is-active{ animation:kenburns 9s ease-out forwards; }
+@keyframes kenburns{ from{ transform:scale(1.08); } to{ transform:scale(1); } }
+@media (prefers-reduced-motion:reduce){ .hero__side.has-img.is-slideshow img.is-active{ animation:none; } }
+.slide-dots{ position:absolute; right:16px; bottom:20px; z-index:3; display:flex; gap:8px; }
+.slide-dots i{ display:block; width:22px; height:2px; background:rgba(246,242,234,.4); transition:background .4s, width .4s var(--ease); }
+.slide-dots i.on{ background:var(--copper); width:34px; }
+.blog-card:hover h3{ color:var(--teal-d); }
+.blog-card .frame img{ transition:transform 1.2s var(--ease); }
+.blog-card:hover .frame img{ transform:scale(1.05); }
+.feat{ transition:background .4s var(--ease), transform .4s var(--ease); }
