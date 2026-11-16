@@ -296,13 +296,18 @@ def build_index():
 <p style="margin-top:2.2rem" data-reveal><a class="text-link" href="treatments.html">View every treatment{I_ARROW}</a></p>
 </div></section>'''
 
-    doctors_teaser = f'''<section class="section bg-ink"><div class="wrap">
+    doctors_teaser = f'''<section class="section bg-ink doc-showcase"><div class="wrap">
 {section_head("The doctors", "Care backed by academic rigour.", "The clinic's founding doctors.", center=True, light=True)}
-<div class="doc-circles stagger" data-reveal>
-<div class="doc-circle"><div class="doc-circle__ph"><img src="{IMG}dr-divyam.jpg" alt="Dr. Divyam Girdhar"></div><h3>Dr. Divyam Girdhar</h3><p class="doc-circle__role">Endodontics &amp; Conservative Dentistry</p><span class="doc-circle__rule"></span><p>BDS, MDS — Root Canal Specialist. Ex. Senior Resident, PGIDS Rohtak.</p></div>
-<div class="doc-circle"><div class="doc-circle__ph"><img src="{IMG}dr-nikita.jpg" alt="Dr. Nikita Mohelay Girdhar"></div><h3>Dr. Nikita Mohelay Girdhar</h3><p class="doc-circle__role">Orthodontics &amp; Dentofacial Orthopaedics</p><span class="doc-circle__rule"></span><p>BDS, MDS — Aligners &amp; myofunctional therapy specialist.</p></div>
+<div class="doc-cards stagger" data-reveal>
+<a class="doc-card" href="doctors.html">
+<div class="doc-card__img"><img src="{IMG}dr-divyam.jpg" alt="Dr. Divyam Girdhar, Endodontist"></div>
+<div class="doc-card__body"><span class="doc-card__role">Endodontics &amp; Conservative Dentistry</span><h3>Dr. Divyam Girdhar</h3><span class="doc-circle__rule"></span><p>BDS, MDS &mdash; Root Canal Specialist. Ex. Senior Resident, PGIDS Rohtak.</p><span class="doc-card__more">View profile{I_ARROW}</span></div>
+</a>
+<a class="doc-card" href="doctors.html">
+<div class="doc-card__img"><img src="{IMG}dr-nikita.jpg" alt="Dr. Nikita Mohelay Girdhar, Orthodontist"></div>
+<div class="doc-card__body"><span class="doc-card__role">Orthodontics &amp; Dentofacial Orthopaedics</span><h3>Dr. Nikita Mohelay Girdhar</h3><span class="doc-circle__rule"></span><p>BDS, MDS &mdash; Aligners &amp; myofunctional therapy specialist.</p><span class="doc-card__more">View profile{I_ARROW}</span></div>
+</a>
 </div>
-<p class="center" style="margin-top:clamp(2rem,4vw,2.8rem)" data-reveal><a class="text-link text-link--light" href="doctors.html">Meet the doctors{I_ARROW}</a></p>
 </div></section>'''
 
     philosophy = f'''<section class="section bg-card"><div class="wrap split">
