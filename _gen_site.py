@@ -256,7 +256,6 @@ def build_index():
 </div>
 <div class="hero__side has-img is-slideshow" data-reveal data-slideshow>
 <img src="{IMG}exterior.jpg" alt="Dr. Girdhar's DentAvenue entrance" class="is-active">
-<img src="{IMG}room-real-1.jpg" alt="Treatment room at Dr. Girdhar's DentAvenue">
 <img src="{IMG}treatment.jpg" alt="Treatment room at Dr. Girdhar's DentAvenue">
 <img src="{IMG}lounge.jpg" alt="Waiting lounge at Dr. Girdhar's DentAvenue">
 <img src="{IMG}xray.jpg" alt="Digital X-ray workstation">
